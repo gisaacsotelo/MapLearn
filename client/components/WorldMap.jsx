@@ -12,7 +12,6 @@ function WorldMap(props) {
     }}
     width={2000}
     id="svg2"
-    {...props}
     className='world-map'
   >
     {/* <defs id="defs4">
