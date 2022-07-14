@@ -29,7 +29,7 @@ Mobile - Home page
 ![image](https://user-images.githubusercontent.com/98783170/178893109-115fcf17-e7be-47e9-941f-47cd90191aef.png)
 
 Mobile - Stretch leaderboard
-![image](https://user-images.githubusercontent.com/98783170/178893189-a65de27d-16fc-49f5-a2e3-511f0a47c927.png)
+![image](https://user-images.githubusercontent.com/98783170/178903475-209e12c1-1567-4cea-b163-a2d96a8cf3d5.png)
 
 Mobile - Once nav clicked - similar size box for if a country is clicked
 ![image](https://user-images.githubusercontent.com/98783170/178893534-ec8b9b57-77a7-49b6-814a-bb35e9b4f7b0.png)
