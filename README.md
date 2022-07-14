@@ -15,6 +15,7 @@ An interactive map where you can learn about different countries in the world
 
 
 * Having a button to zoom in on the map
+* Having a search function where you can look for a country on the map
 * Have an image appear when it's loading info
 * Having a mini pop up with basic information. When you click expand it then goes into the larger original pop up
 * Having a functional PLAY section with games
