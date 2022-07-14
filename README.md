@@ -40,6 +40,21 @@ Desktop image of info once a country is clicked
 ![image](https://user-images.githubusercontent.com/98783170/178893856-98ad5657-124b-4b70-8d44-a5ab8c173bfc.png)
 
 
+## User Stories:
+
+- When I load up the website, I want to be able to see the whole world
+
+- When I hover over a country I want it to light up
+
+- When I click a country I want it to display country specific data in a pop up
+
+- I would like to be able to play a game involving guessing countries names/locations
+
+- I would like to be able to have a record of my score to compete against other users
+
+- I would like to be able to use the app on my mobile phone
+
+
 ## Our team goals
 
 
