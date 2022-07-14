@@ -1,5 +1,6 @@
 import React from 'react'
 import Learn from './Learn'
+import { Link } from 'react-router-dom'
 // import Path from './Path'  For stretch
 
 function Header() {
@@ -9,8 +10,8 @@ function Header() {
 
       <Link to={<Learn />}> <p>Learn</p> </Link>
 
-      <Link to={<Path />}> <p>Path</p> </Link>
-      
+      <Link to={<Learn />}> <p>Path</p> </Link>
+
    </header>
   )
 }

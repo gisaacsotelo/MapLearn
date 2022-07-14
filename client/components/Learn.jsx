@@ -1,8 +1,11 @@
 import React from 'react'
+import WorldMap from './WorldMap'
 
 function Learn() {
+  
+  
   return (
-    <div>Learn</div>
+    <WorldMap />
   )
 }
 
