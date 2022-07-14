@@ -9,6 +9,7 @@ An interactive map where you can learn about different countries in the world
 * When you hover it highlights the country
 * When you click on it it displays the name and info about that country in a large pop up
 * Mobile First
+* Making site responsive
 
 ## Stretch
 
