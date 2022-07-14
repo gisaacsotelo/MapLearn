@@ -12,10 +12,11 @@ An interactive map where you can learn about different countries in the world
 
 ## Stretch
 
+
 * Having a button to zoom in on the map
-* Have a loading image
-* Having a mini pop with basic information. When you click expand it then goes into the larger original pop up
-* Having separate pages with games
+* Have an image appear when it's loading info
+* Having a mini pop up with basic information. When you click expand it then goes into the larger original pop up
+* Having a functional PLAY section with games
 		* eg a name of a country pops up and you have to find the one that matches
 		* eg a country is highlighted automatically and you need to guess what country it is. Either multi choice or you write it
 * Having a database that saves the name and the highscore
@@ -23,7 +24,21 @@ An interactive map where you can learn about different countries in the world
 
 ### Wireframes
 
-to be added
+Mobile - Home page
+![image](https://user-images.githubusercontent.com/98783170/178893109-115fcf17-e7be-47e9-941f-47cd90191aef.png)
+
+Mobile - Stretch leaderboard
+![image](https://user-images.githubusercontent.com/98783170/178893189-a65de27d-16fc-49f5-a2e3-511f0a47c927.png)
+
+Mobile - Once nav clicked - similar size box for if a country is clicked
+![image](https://user-images.githubusercontent.com/98783170/178893534-ec8b9b57-77a7-49b6-814a-bb35e9b4f7b0.png)
+
+Desktop image of home page. Leaderboard below would be a stretch
+![image](https://user-images.githubusercontent.com/98783170/178893612-9e04959b-3cb2-4dcb-b8f8-c45d1900daac.png)
+
+Desktop image of info once a country is clicked
+![image](https://user-images.githubusercontent.com/98783170/178893856-98ad5657-124b-4b70-8d44-a5ab8c173bfc.png)
+
 
 ## Our team goals
 
