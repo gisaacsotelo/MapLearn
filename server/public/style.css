@@ -5,25 +5,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+}
+
+body {
   background-color: #7ac1dd;
   font-family: 'Poppins', sans-serif;
-}
-/* Custom styles below */
+} 
 
-/* body {
-  display: flex;
-} */
-
-html, body {
+/* html, body {
   margin: 0;
   overflow: hidden;
   height: 100%
-}
+} */
 
 .heading {
   z-index: 3;
   color: whitesmoke;
   font-family: 'Lora', serif;
+}
+
+img {
+  max-width: 30vw;
 }
 
 svg.world-map {
@@ -72,9 +75,9 @@ path:hover {
 }
 
 #map-container {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  /* display: inline-block; */
+  display: inline-block;
   position: relative;  
   top: 0; left: 0;
   width: 100%; height: 100%;
