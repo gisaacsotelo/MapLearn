@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 // import view components
 import Learn from './Learn'
 // import components
+
 import Header from './Header'
 import Footer from './Footer'
 
