@@ -5,28 +5,29 @@ function CountryInfo(props) {
     props.country
 
   const languageList = Object.values(languages)
+  console.log(props.country)
 
   return (
-    <>
-      <div className="countryName">
+    <div className="country-info">
+      <div className="country-name">
         <h2>{name[Object.keys(name)[0]]}</h2>
       </div>
-      <img className="countryFlag" src={flags[Object.keys(flags)[0]]} />
-      <img
-        className="countryCoat"
-        src={coatOfArms[Object.keys(coatOfArms)[0]]}
+      <div className="country-images">
+        <img className="country-flag" src={flags[Object.keys(flags)[0]]} />
+        <img className="country-coat" src={coatOfArms[Object.keys(coatOfArms)[0]]}
       />
-      <div className="countryDesc">
+      </div>
+      <section className="countryDesc">
         <p>Capital: {capital}</p>
-        <ul>Primary Languages: 
+        <ul key >Primary Languages: 
           {languageList.map(lan => {
             return <li>{lan}</li>
           })}
         </ul>
         <p>Area: {area.toLocaleString()} km²</p>
         <p>Population: {population.toLocaleString()} people</p>
-      </div>
-    </>
+      </section>
+    </div>
   )
 }
 
