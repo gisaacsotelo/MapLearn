@@ -4,6 +4,8 @@ function CountryInfo(props) {
   const { flags, coatOfArms, name, capital, languages, area, population } =
     props.country
 
+  const languageList = Object.values(languages)
+
   return (
     <>
       <div className="countryName">
@@ -16,7 +18,11 @@ function CountryInfo(props) {
       />
       <div className="countryDesc">
         <p>Capital: {capital}</p>
-        <p>Primary Language: {languages[Object.keys(languages)[0]]}</p>
+        <ul>Primary Languages: 
+          {languageList.map(lan => {
+            return <li>{lan}</li>
+          })}
+        </ul>
         <p>Area: {area.toLocaleString()} km²</p>
         <p>Population: {population.toLocaleString()} people</p>
       </div>
