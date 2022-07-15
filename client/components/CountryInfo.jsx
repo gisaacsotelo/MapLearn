@@ -9,7 +9,7 @@ function CountryInfo(props) {
       <div className="countryName">
         <h2>{name[Object.keys(name)[0]]}</h2>
       </div>
-      <img className="countryFlag" src="https://flagcdn.com/w320/nz.png" />
+      <img className="countryFlag" src={flags[Object.keys(flags)[0]]} />
       <img
         className="countryCoat"
         src={coatOfArms[Object.keys(coatOfArms)[0]]}

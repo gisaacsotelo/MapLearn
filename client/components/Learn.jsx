@@ -5,7 +5,7 @@ import CountryInfo from "./CountryInfo"
 import getCountry from "../apis/apiClient"
 
 function Learn() {
-  const [country, setCountry] = useState([])
+  const [country, setCountry] = useState(null)
 
   //this function will run when a country is clicked in WorldMap
   const countryClicked = async (e) => {
@@ -13,9 +13,11 @@ function Learn() {
     setCountry(await getCountry(id))
   }
 
+
   return (
     <>
       <WorldMap countryClicked={countryClicked} />
+
       {country && <CountryInfo country={country} />}
     </>
   )
