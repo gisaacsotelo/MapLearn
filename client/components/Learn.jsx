@@ -13,7 +13,6 @@ function Learn() {
     setCountry(await getCountry(id))
   }
 
-
   return (
     <>
       <WorldMap countryClicked={countryClicked} />

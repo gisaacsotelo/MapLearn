@@ -6,7 +6,7 @@ function WorldMap({ countryClicked }) {
   
   return (
   <>
-    <div className='map-container'>   
+    <div className='world-map'>   
       <svg 
       xmlns="http://www.w3.org/2000/svg"
       // height={1001}
@@ -15,15 +15,12 @@ function WorldMap({ countryClicked }) {
         stroke: "#000",
         fill: "none",
         
-        
       }}
       // width={2000}
       viewBox="0 0 1100 1100"
       preserveAspectRatio="xMinYMin meet" 
       id="svg2"
-      className='world-map'
-      
-    >
+      >
       {/* <defs id="defs4">
         <style type="text/css" id="style6">
           {"path{fill-rule:evenodd}"}
