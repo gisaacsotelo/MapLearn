@@ -35,16 +35,26 @@ header {
 
 nav {
   display: flex;
+  gap: 10px;
   align-items: center;
-  gap: 1rem;
-  height: 5vh;
+  justify-content: space-between;
+  height: 7vh;
+  width: 10vw;
 }
 
 nav p {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
   display: inline-block;
   background-color: wheat;
-  border-radius: 50%;
+  border-radius: 100%;
 }
+
+nav a {
+  width: 100%;
+}
+
 
 
 .world-map {
