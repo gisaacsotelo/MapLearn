@@ -1,24 +1,21 @@
 import React, { useState } from 'react'
 import WorldMap from './WorldMap'
 import CountryInfo from './CountryInfo'
-//Need to import an api function from './apiClient'
+//import functions
+import getCountry from '../apis/apiClient'
 
 function Learn() {
-  
   const [country, setCountry] = useState([])
 
   //this function will run when a country is clicked in WorldMap
-  const handleClick = (e) => {
-    e.PreventDefault()
-    apiFunction(e.target.value - clickedCountry) //From apiClient 
-      .then(countryInfo => {    //countryInfo is the API data
-        setCountry(countryInfo)
-      })
+  const countryClicked = async (e) => {
+    const id = e.target.id
+    setCountry(await getCountry(id))
   }
   
   return (
     <>
-      <WorldMap handleClick={handleClick}/>
+      <WorldMap countryClicked={countryClicked}/>
       {country && <CountryInfo country={country} />}
     </>
   )
