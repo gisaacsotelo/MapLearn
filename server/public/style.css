@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 html {
@@ -93,22 +93,40 @@ path:hover {
 
 .country-info {
   position: relative;
-  background-color: pink;
+  background-color: rgba(255, 255, 255, 0.776);
   width: 70vw;
   height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  transition: .64s ease-in-out;
+  border: #3d3d3d;
+  border-style: groove;
 }
+
+.country-name {
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.country-desc {
+  text-align: center;
+
+}
+
 
 .country-images {
   display: flex;
   width: 200px;
   height: 200px;
+
 }
 
 .country-coat {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
-
 
 
 
