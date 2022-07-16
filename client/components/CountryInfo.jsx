@@ -24,10 +24,8 @@ function CountryInfo(props) {
         <div className="country-name">
           <h2>{countryName}</h2>
         </div>
-        <div className="country-images">
           <img className="country-flag" src={flag}/>
           <img className="country-coat" src={coat}/>
-        </div>
       </section>
         <section className="bot-section">
           <div className='country-desc'>

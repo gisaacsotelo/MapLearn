@@ -96,45 +96,66 @@ path:hover {
 /* Country Info -------------------------------- */
 
 .country-info {
+  position: relative;
   padding: 50px;
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 7.5%;
+  border-radius: 1%;
   border: 1px solid black;
   width: 60vw;
   height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
   transition: .64s ease-in-out;
   border: #3d3d3d;
   border-style: groove;
+  border: 1px solid red;
+  box-shadow: 5px 5px 5px 5px;
+  column-gap: 200px;
 }
 
-.country-name {
-  font-family: 'Poppins', sans-serif;
+.top-section {
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  /* border: 1px solid red; */
 
+}
+
+.bot-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  /* border: 1px solid red; */
 }
 
 .country-desc {
   order: 3;
   text-align: center;
-
 }
 
-
-.country-images {
-  display: flex;
-  width: 200px;
-  height: 200px;
+.country-name {
+  flex: 1 0 auto;
   order: 1;
+  /* border: 1px solid red; */
+  text-align: center;
+}
 
+.country-flag {
+  flex: 2 0 auto;
+  width: 400px;
+  height: 200px;
+  order: 2;
+  /* border: 1px solid red; */
 }
 
 .country-coat {
+  flex: 1 0 auto;
   width: 200px;
   height: 200px;
+  order: 3;
+  /* border: 1px solid red; */
 }
+
 
 
 
