@@ -11,16 +11,18 @@ function App () {
 
   return (
     <Router>
-      <Header />
+
       <div className="main">
+      <Header />
         <Routes>
           <Route path='/' element={<Learn />}/>
           <Route path='/play' element={<Learn />}/>
 
           {/* <Route path='/play' element={<Play />} />   This will be for our stretch */}
         </Routes>
-      </div>
       <Footer />
+      </div>
+
     </Router>
   )
 }

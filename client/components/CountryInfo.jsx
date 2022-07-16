@@ -1,4 +1,5 @@
 import React from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
 function CountryInfo(props) {
   const { flags, coatOfArms, name, capital, languages, area, population, continents, currencies, latlng, car, altSpellings, unMember} = props.country
@@ -15,16 +16,25 @@ function CountryInfo(props) {
   const flag = flags[Object.keys(flags)[1]]
   const coat = coatOfArms[Object.keys(coatOfArms)[1]]
 
-  console.log(currency)
+  console.log(props)
   return (
     <>
-
-    <div className="country-info">
-      <button onClick={props.closeInfo}>x</button>
-      <section className='top-section'>
+    <AnimatePresence>
+    <motion.button className="modal" onClick={props.closeInfo} initial={{ opacity: 0, }} animate={{ opacity: 1, }} exit={{ opacity: 0, scale: 0.2}}  >
+    
+      <motion.div 
+        className="country-info" 
+        initial={{ opacity: 0, scale: 1}} 
+        animate={{ opacity: 1, }} 
+        transition={{type: "spring", stiffness: 200, damping: 30}}
+        whileHover={{ scale: 1.1 }} 
+        exit={{ opacity: 0, scale: 0.2}}
+      >
         <div className="country-name">
-          <h2>{countryName}</h2>
+          <h1>{countryName}</h1>
         </div>
+      <section className='top-section'>
+
           <img className="country-flag" src={flag}/>
           <img className="country-coat" src={coat}/>
       </section>
@@ -52,7 +62,9 @@ function CountryInfo(props) {
           </div>
 
         </section>
-    </div>
+    </motion.div>
+    </motion.button>
+    </AnimatePresence>
     </>
   )
 }
