@@ -1,11 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500&display=swap');
 
+/* Overall page -------------------------------- */ 
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 html {
@@ -18,11 +20,12 @@ body {
   font-family: 'Poppins', sans-serif;
 } 
 
-/* html, body {
-  margin: 0;
-  overflow: hidden;
-  height: 100%
-} */
+.main {
+  display: flex;
+}
+
+
+/* Header -------------------------------- */
 
 header {
   padding: 0vw 10vw 0vw 10vw;
@@ -47,28 +50,25 @@ nav {
   width: 10vw;
 }
 
+
 nav a {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 75%;
-}
-
-nav p {
-  width: 100%;
-  text-align: center;
   justify-content: center;
-  display: inline-block;
+  width: 100%;
+  height: 100%;
   background-color: wheat;
   border-radius: 100%;
 }
+
+/* World Map -------------------------------- */
 
 .world-map {
   width: 100%;
   height: 90vh;
   background-color: #3d3d3d;
   display: flex;
-  position: relative;
+  position: absolute;
   justify-content: center;
 }
 
@@ -76,7 +76,6 @@ svg {
   width: 100vw;
   height: 90vh;
 }
-
 
 path {
   fill: #c0c5c7;
@@ -89,6 +88,33 @@ path:hover {
   cursor: pointer;
   
 }
+
+/* Country Info -------------------------------- */
+
+.country-info {
+  position: relative;
+  background-color: pink;
+  width: 70vw;
+  height: 60vh;
+}
+
+.country-images {
+  display: flex;
+  width: 200px;
+  height: 200px;
+}
+
+.country-coat {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+
+
+
 
 /* #map-container { */
   /* display: flex; */
