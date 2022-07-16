@@ -17,7 +17,7 @@ function WorldMap({ countryClicked }) {
         
       }}
       // width={2000}
-      viewBox="0 0 1100 1100"
+      viewBox="0 0 2000 1000"
       preserveAspectRatio="xMinYMin meet" 
       id="svg2"
       >
