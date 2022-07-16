@@ -12,8 +12,8 @@ function Header() {
         <Heading size='lg' fontSize='50px'>Map Learn!</Heading>
       {/* </motion.header> */}
       <nav>
-        <Link to={<Learn />}> <p>Learn</p> </Link>
-        <Link to={<Learn />}> <p>Play</p> </Link>
+        <Link to={<Learn />}> Learn </Link>
+        <Link to={<Learn />}> Play </Link>
       </nav>
     </header>
    
