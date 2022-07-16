@@ -97,16 +97,15 @@ path:hover {
 
 .country-info {
   padding: 50px;
-  background-color: pink;
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 7.5%;
   border: 1px solid black;
-  opacity: 0.9;
   width: 60vw;
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   transition: .64s ease-in-out;
   border: #3d3d3d;
   border-style: groove;
@@ -118,6 +117,7 @@ path:hover {
 }
 
 .country-desc {
+  order: 3;
   text-align: center;
 
 }
@@ -127,6 +127,7 @@ path:hover {
   display: flex;
   width: 200px;
   height: 200px;
+  order: 1;
 
 }
 
