@@ -21,7 +21,11 @@ body {
 } 
 
 .main {
+  height: 90vh;
+  width: auto;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -92,9 +96,12 @@ path:hover {
 /* Country Info -------------------------------- */
 
 .country-info {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.776);
-  width: 70vw;
+  padding: 50px;
+  background-color: pink;
+  border-radius: 7.5%;
+  border: 1px solid black;
+  opacity: 0.9;
+  width: 60vw;
   height: 60vh;
   display: flex;
   justify-content: center;
@@ -124,8 +131,8 @@ path:hover {
 }
 
 .country-coat {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 
 
