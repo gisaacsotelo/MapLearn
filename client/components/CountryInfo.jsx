@@ -9,6 +9,7 @@ function CountryInfo(props) {
 
   return (
     <div className="country-info">
+      <button onClick={props.closeInfo}>x</button>
       <div className="country-name">
         <h2>{name[Object.keys(name)[0]]}</h2>
       </div>
@@ -20,8 +21,8 @@ function CountryInfo(props) {
       <section className="countryDesc">
         <p>Capital: {capital}</p>
         <ul key >Primary Languages: 
-          {languageList.map(lan => {
-            return <li>{lan}</li>
+          {languageList.map((lan, index) => {
+            return <li key={index}>{lan}</li>
           })}
         </ul>
         <p>Area: {area.toLocaleString()} km²</p>
