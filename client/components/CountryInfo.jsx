@@ -20,6 +20,7 @@ function CountryInfo(props) {
     <>
 
     <div className="country-info">
+      <button onClick={props.closeInfo}>x</button>
       <section className='top-section'>
         <div className="country-name">
           <h2>{countryName}</h2>
