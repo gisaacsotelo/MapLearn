@@ -38,7 +38,7 @@ function CountryInfo(props) {
       <AnimatePresence>
         <motion.button
           className="modal"
-          onClick={props.closeInfo}
+          onClick={() => props.closeInfo(props.country)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >

@@ -13,9 +13,16 @@ function Learn() {
   const countryClicked = async (e) => {
     const id = e.target.id
     setCountry(await getCountry(id))
+    const elMapa = document.querySelectorAll(`path#${id}`)
+    const elMapaArray = Array.prototype.slice.call(elMapa)
+    elMapaArray[0].style.fill = '#aeeb2bcf';
   }
   // function to close the Country Info
-  const closeInfo = e => {
+  const closeInfo = country => {
+    const code = country.cca2
+    const selectedCountry = document.querySelectorAll(`path#${code}`)
+    const selectedCountryArr = Array.prototype.slice.call(selectedCountry)
+    selectedCountryArr[0].style.fill = 'rgba(255, 255, 255, 0.512)'
     setCountry(false)
   }
 
