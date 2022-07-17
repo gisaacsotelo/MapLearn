@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 
 function WorldMap({ countryClicked }) {
@@ -9,7 +10,10 @@ function WorldMap({ countryClicked }) {
 
   return (
   <>
-    <div className='world-map'>   
+    <motion.div className='world-map'   
+      initial={{ pathLength: 0 }}
+      animate={{ pathLength: 1 }}
+    >   
       <svg 
       xmlns="http://www.w3.org/2000/svg"
       // height={1001}
@@ -1509,7 +1513,7 @@ function WorldMap({ countryClicked }) {
     />
       </g>
     </svg>
-    </div>
+    </motion.div>
   </>
   )
 }
