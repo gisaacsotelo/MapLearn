@@ -1,31 +1,40 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+
 
 function WorldMap({ countryClicked }) {
 
-  // const countryClicked = e => {
-  //   const id = e.target.id
-  //   console.log(id)
+  // const countryClicked = (e) => {
+  //   console.log(`got clicked: `, e.target.id)
   // }
 
   return (
-    <svg
-    xmlns="http://www.w3.org/2000/svg"
-    height={1001}
-    style={{
-      strokeLinejoin: "round",
-      stroke: "#000",
-      fill: "none",
-    }}
-    width={2000}
-    id="svg2"
-    className='world-map'
-  >
-    {/* <defs id="defs4">
-      <style type="text/css" id="style6">
-        {"path{fill-rule:evenodd}"}
-      </style>
-    </defs> */}
-    <path
+  <>
+    <motion.div className='world-map'   
+      initial={{ pathLength: 0 }}
+      animate={{ pathLength: 1 }}
+    >   
+      <svg 
+      xmlns="http://www.w3.org/2000/svg"
+      // height={1001}
+      style={{
+        strokeLinejoin: "round",
+        stroke: "#000",
+        fill: "none",
+        
+      }}
+      // width={2000}
+      viewBox="0 0 2000 1000"
+      preserveAspectRatio="xMinYMin meet" 
+      id="svg2"
+      >
+      {/* <defs id="defs4">
+        <style type="text/css" id="style6">
+          {"path{fill-rule:evenodd}"}
+        </style>
+      </defs> */}
+      <g id="g5">
+      <path
       onClick={countryClicked}
       id="AF"
       data-name="Afghanistan"
@@ -1502,7 +1511,10 @@ function WorldMap({ countryClicked }) {
       data-id="IC"
       d="m879.6 395.2-.2-.2-.7.5h-.6l.1.2.1.2.7.4.6-1.1zm13.5-2.1v-.1h-.1l-.1.1-1.3-.1-.2.6-.5.4v.7l.5.7.3.1.5.1.7-.4.2-.4.1-.8-.1-.4v-.5zm-9.7.8.5-.4v-.2l-.1-.3-.5-.3h-.2l-.2.2-.2.4.3.5.2.1h.2zm4.7-2.3 1.2-1v-.3l-1 .1-1.1 1-.3.1-1 .1h-.5l-.4.2.2.3.4 1 .7.9.6-.2.3-.2.4-.6.5-1.4zm11.6 1.3 1.5-.5.3-1 .3-1.1v-.7l-.2-.3h-.5l-.3.2-.1.6-.7 1.3-.5 1.2-.7.6-.7.2.1.1.7.1.8-.7zm-19.7-2 .5-.5.1-.3-.1-.5.2-.2-.1-.4-.3-.4h-.7l-.4.6.6 1.2.1.5h.1zm22.4-2.7.9-.3.5-.3.1-.9.2-.3-.2-.3-.2.2-.2.4-.6.2-.8.4-.2.3-.2.9.4.1.3-.4z"
     />
-  </svg>
+      </g>
+    </svg>
+    </motion.div>
+  </>
   )
 }
 

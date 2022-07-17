@@ -18,7 +18,9 @@
     "build:server": "npm run knex -- migrate:latest",
     "lint": "eslint --ext .js,.jsx .",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "knex": "knex --knexfile ./server/db/knexfile.js"
+    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "sass-dev": "sass --watch --update --style=expanded assets/scss:assets/css",
+    "sass-prod": "sass --no-source-map --style=compressed assets/scss:assets/css"
   },
   "babel": {
     "presets": [
@@ -38,10 +40,15 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.0.0",
     "@vscode/sqlite3": "^5.0.7",
+    "bulma": "^0.9.4",
     "express": "^4.17.1",
+    "framer-motion": "^2.9.5",
     "knex": "^1.0.2",
+    "motion": "^10.12.0",
     "pg": "^8.5.1",
+    "scss": "^0.2.4",
     "superagent": "^6.1.0"
   },
   "devDependencies": {
