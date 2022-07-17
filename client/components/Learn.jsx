@@ -3,6 +3,7 @@ import WorldMap from "./WorldMap"
 import CountryInfo from "./CountryInfo"
 //import functions
 import getCountry from "../apis/apiClient"
+import { AnimatePresence } from "framer-motion"
 
 function Learn() {
   const [country, setCountry] = useState(null)
@@ -20,9 +21,11 @@ function Learn() {
 
   return (
     <>
+    <AnimatePresence>
       <WorldMap countryClicked={countryClicked} />
 
       {country && <CountryInfo country={country} closeInfo={closeInfo}/>}
+      </AnimatePresence>
     </>
   )
 }

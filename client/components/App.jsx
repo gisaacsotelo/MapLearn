@@ -15,8 +15,6 @@ function App () {
       <div className="main">
         <Routes>
           <Route path='/' element={<Learn />}/>
-          <Route path='/play' element={<Learn />}/>
-
           {/* <Route path='/play' element={<Play />} />   This will be for our stretch */}
         </Routes>
       </div>

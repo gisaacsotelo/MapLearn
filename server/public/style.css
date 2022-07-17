@@ -17,7 +17,7 @@ html {
 }
 
 body {
- background-color: black;
+ background-color: #011627;
   font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   /* height: 100vh;
   width: 100vw; */
@@ -111,7 +111,7 @@ nav a {
 .world-map {
   width: 100%;
   height: 90vh;
-  background-color: #0D5C63;
+  background-color: #63768D;
   display: flex;
   position: absolute;
   justify-content: center;
@@ -140,11 +140,11 @@ path:hover {
   position: relative;
   padding: 50px;
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 1%;
+  border-radius: 2%;
   border: 1px solid black;
   width: 60vw;
   height: 60vh;
-  transition: .64s ease-in-out;
+  /* transition: .64s ease-in-out; */
   border: #3d3d3d;
   border-style: groove;
   border: 1px solid red;
@@ -159,7 +159,7 @@ path:hover {
 .top-section {
   display: flex;
   justify-content: center;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   /* border: 1px solid red; */
 
 }
@@ -187,15 +187,17 @@ path:hover {
 }
 
 .country-flag {
-  flex: 2 0 auto;
+  /* flex: 2 0 auto; */
+  display: block;
   width: 400px;
   height: 200px;
   order: 2;
+  
   /* border: 1px solid red; */
 }
 
 .country-coat {
-  flex: 1 0 auto;
+  flex: block;
   width: 200px;
   height: 200px;
   order: 3;
@@ -228,6 +230,35 @@ path:hover {
   border-radius: 40px;
 }
 
+
+
+.close-info-button {
+  position: absolute;
+  background: none;
+  border: none;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close-info-button:hover {
+  opacity: 1;
+}
+.close-info-button:before, .close-info-button:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 8px;
+  background-color: #333;
+}
+.close-info-button:before {
+  transform: rotate(45deg);
+}
+.close-info-button:after {
+  transform: rotate(-45deg);
+}
 
 
 /* #map-container { */

@@ -21,26 +21,27 @@ function CountryInfo(props) {
     <>
 
 <motion.div  
-    initial={{ scale: 0 }}
-    drag
-    dragConstraints={{
-      top: -0,
-      left: -0,
-      right: 0,
-      bottom: 0,
-    }}
-    dragElastic={0.2}
-    animate={{  scale: 1 }}
-    
+    className="country-info"
+    // drag
+    // dragConstraints={{
+    //   top: -0,
+    //   left: -0,
+    //   right: 0,
+    //   bottom: 0,
+    // }}
+    // dragElastic={0.2}
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0 }}
     transition={{
       type: "spring",
       stiffness: 260,
       damping: 20
     }}
     >
-      <button onClick={props.closeInfo}>x</button>
+      <button onClick={props.closeInfo} className='close-info-button'></button>
       <section className='top-section'>
-        <div className="country-name">
+        <div className="title is-4 country-name">
           <h2>{countryName}</h2>
         </div>
           <img className="country-flag" src={flag}/>
