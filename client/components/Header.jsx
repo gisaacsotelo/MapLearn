@@ -1,5 +1,6 @@
 import React, { useState } from "react" 
 import Learn from './Learn'
+import Play from './Play'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {  Image, Flex, Button,  HStack , chakra } from '@chakra-ui/react';
@@ -34,15 +35,15 @@ function Header() {
       >
       {/* <motion.header className='heading' animate={{ x: 100 }} > */}
         <motion.div className='title-container'
-        whileHover={{ scale: 1.1 }}
-  onHoverStart={e => {}}
-  onHoverEnd={e => {}}>
+          whileHover={{ scale: 1.1 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}>
         <Heading size='lg' fontSize='50px' className="title">Map Learn! 	&#128506;</Heading>
       {/* </motion.header> */}
       </motion.div>
       <nav>
-        <Link className='button-38' to={<Learn />}> Learn </Link>
-        <Link className='button-38' to={<Learn />}> Play </Link>
+        <Link className='button-38' to={'/'}> Learn </Link>
+        <Link className='button-38' to={'/play'}> Play </Link>
       </nav>
       </Flex>
     </chakra.header>
