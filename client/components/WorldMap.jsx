@@ -3,7 +3,7 @@ import React from 'react'
 
 function WorldMap({ countryClicked }) {
 
-  
+
   return (
   <>
     <div className='world-map'>   

@@ -11,6 +11,8 @@ function Learn() {
   const countryClicked = async (e) => {
     const id = e.target.id
     setCountry(await getCountry(id))
+    const elMapa = document.querySelectorAll('path')
+    console.log(`I got: `, elMapa)
   }
 
   return (
