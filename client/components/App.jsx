@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 // import view components
 import Learn from "./Learn"
+import Play from "./Play"
 // import components
 
 import Header from "./Header"
@@ -14,7 +15,7 @@ function App() {
       <div className="main">
         <Routes>
           <Route path="/" element={<Learn />} />
-          <Route path="/play" element={<Learn />} />
+          <Route path="/play" element={<Play />} />
 
           {/* <Route path='/play' element={<Play />} />   This will be for our stretch */}
         </Routes>
