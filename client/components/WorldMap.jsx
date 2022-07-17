@@ -3,7 +3,10 @@ import React from 'react'
 
 function WorldMap({ countryClicked }) {
 
-  
+  // const countryClicked = (e) => {
+  //   console.log(`got clicked: `, e.target.id)
+  // }
+
   return (
   <>
     <div className='world-map'>   

@@ -33,15 +33,16 @@ function Header() {
         justify="space-between"
       >
       {/* <motion.header className='heading' animate={{ x: 100 }} > */}
-        <motion.div  whileHover={{ scale: 1.2 }}
+        <motion.div className='title-container'
+        whileHover={{ scale: 1.1 }}
   onHoverStart={e => {}}
   onHoverEnd={e => {}}>
-        <Heading size='lg' fontSize='50px'>Map Learn! 	&#128506;</Heading>
+        <Heading size='lg' fontSize='50px' className="title">Map Learn! 	&#128506;</Heading>
       {/* </motion.header> */}
       </motion.div>
       <nav>
-        <Link class='button-38' to={<Learn />}> Learn </Link>
-        <Link class='button-38' to={<Learn />}> Play </Link>
+        <Link className='button-38' to={<Learn />}> Learn </Link>
+        <Link className='button-38' to={<Learn />}> Play </Link>
       </nav>
       </Flex>
     </chakra.header>

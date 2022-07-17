@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500&display=swap');
+
 
 /* Overall page -------------------------------- */ 
 
@@ -16,8 +17,10 @@ html {
 }
 
 body {
-  background-color: #64adc9;
-  font-family: 'Poppins', sans-serif;
+ background-color: black;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  /* height: 100vh;
+  width: 100vw; */
 } 
 
 .main {
@@ -39,7 +42,7 @@ body {
   justify-content: center;
 }
 
-.modal {
+/* .modal {
   width: clamp(50%, 700px, 90%);
   height: min(50%, 300px);
 
@@ -50,12 +53,13 @@ body {
   flex-direction: column;
   align-items: center;
 
-}
+} */
 
 /* Header -------------------------------- */
 
 header {
   padding: 0vw 10vw 0vw 10vw;
+  font-family: "Fredoka One", cursive;
   height: 10%;
   width: 100vw;
   display: flex;
@@ -79,6 +83,19 @@ nav {
 }
 
 
+.title {
+  font-size:6vw;
+	letter-spacing:0.1em;
+	text-decoration:none;
+	color: white;
+	background:linear-gradient(to right,#363636 0%,#363636 100%);
+	background-repeat: no-repeat;
+	background-position: left 100%;
+	transition-duration: 1s;
+	background-size: 0 6%;
+	
+}
+
 nav a {
   display: flex;
   align-items: center;
@@ -94,7 +111,7 @@ nav a {
 .world-map {
   width: 100%;
   height: 90vh;
-  background-color: #3d3d3d;
+  background-color: #0D5C63;
   display: flex;
   position: absolute;
   justify-content: center;
@@ -120,28 +137,69 @@ path:hover {
 /* Country Info -------------------------------- */
 
 .country-info {
+  position: relative;
   padding: 50px;
-  background-color: pink;
-  border-radius: 7.5%;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 1%;
   border: 1px solid black;
-  opacity: 0.9;
   width: 60vw;
   height: 60vh;
+  transition: .64s ease-in-out;
+  border: #3d3d3d;
+  border-style: groove;
+  border: 1px solid red;
+  box-shadow: 5px 5px 5px 5px;
+  column-gap: 200px;
 }
 .icon {
   width:10vw;
   height: 10vh;
 }
 
-.country-images {
+.top-section {
   display: flex;
-  width: 200px;
+  justify-content: center;
+  flex-flow: row nowrap;
+  /* border: 1px solid red; */
+
+}
+
+.bot-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+
+  /* border: 1px solid red; */
+}
+
+.country-desc {
+  order: 3;
+  text-align: center;
+}
+
+.country-name {
+  flex: 1 0 auto;
+  order: 1;
+  /* border: 1px solid red; */
+  text-align: center;
+}
+
+.country-flag {
+  flex: 2 0 auto;
+  width: 400px;
   height: 200px;
+  order: 2;
+  /* border: 1px solid red; */
 }
 
 .country-coat {
+  flex: 1 0 auto;
   width: 200px;
   height: 200px;
+  order: 3;
+  /* border: 1px solid red; */
 }
 
 
@@ -189,28 +247,40 @@ path:hover {
 
 /* CSS */
 .button-38 {
+  
   background-color: #FFFFFF;
   border: 0;
   border-radius: .5rem;
   box-sizing: border-box;
   color: #111827;
   font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: .875rem;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.25rem;
   padding: .75rem 1rem;
   text-align: center;
   text-decoration: none #D1D5DB solid;
   text-decoration-thickness: auto;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.9), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  height: 5vh;
+	letter-spacing:0.2em;
+	text-decoration:none;
+	color:#ffffff;
+	background:linear-gradient(to right,#363636 0%,#363636 100%);
+	background-repeat: no-repeat;
+	background-position: left 100%;
+	transition-duration: 1s;
+	background-size: 0 6%;
+	
 }
 
 .button-38:hover {
-  background-color: rgb(249,250,251);
+  background-color: rgb(243, 248, 253);
+  color:black
 }
 
 .button-38:focus {
