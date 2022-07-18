@@ -285,3 +285,8 @@ path:hover {
 .button-38:focus-visible {
   box-shadow: none;
 }
+
+/* Play section CSS */
+.btn-next{
+  z-index: 50;
+}
