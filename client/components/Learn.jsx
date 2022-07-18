@@ -28,11 +28,9 @@ function Learn() {
 
   return (
     <>
-    <AnimatePresence>
       <WorldMap countryClicked={countryClicked} />
 
       {country && <CountryInfo country={country} closeInfo={closeInfo}/>}
-      </AnimatePresence>
     </>
   )
 }
