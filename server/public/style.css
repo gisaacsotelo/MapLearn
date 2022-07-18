@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url(./images/texture1.jpg);
+  background-image: url(./images/Texturelabs_Paper_276S.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -164,14 +164,16 @@ path:hover {
   /* border: 1px solid red; */
   backdrop-filter: (5px);
   width: 50vw;
-  height: 20vh;
+  height: 100%;
   overflow: auto ;
   padding: 20px ;
 }
 
+
 .country-desc {
   order: 3;
   text-align: center;
+  height: 100%;
 }
 
 .country-name {
@@ -239,7 +241,6 @@ path:hover {
 } */
 
 
-/* CSS */
 .button-38 {
   
   background-color: #FFFFFF;
@@ -304,4 +305,8 @@ outline: 1px solid slategrey;
 
 .btn-next{
   z-index: 50;
+}
+
+.play-country-title h2 {
+  top: 10vh;
 }
