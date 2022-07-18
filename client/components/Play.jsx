@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react"
 // import components
 import WorldMap from "./WorldMap"
-import CountryInfo from "./CountryInfo"
 import LeaderBoard from "./LeaderBoard"
 //import functions
-import getCountry from "../apis/apiClient"
-import { AnimatePresence } from "framer-motion"
+
 
 function Play() {
-  const [clicked, setClicked] = useState(false)
+  const [clicked, setClicked] = useState(null)
   const [randomCountry, setRandomCountry] = useState(null)
+  const [reset, setReset] = useState(false)
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
-  console.log(`country: `,randomCountry)
+  console.log(`Render component: `,randomCountry)
 
   useEffect(() => {
     const countriesDOM = Array.from(document.querySelectorAll('path'))
-    console.log(`countriesDOM: `, countriesDOM)
+    console.log(`START ARRAY: `, countriesDOM)
+    // console.log(`countriesDOM: `, countriesDOM)
     const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) + 1
     const rndmCntry = countriesDOM[rndInt].dataset
     setRandomCountry(rndmCntry)
-  }, [])
+  }, [reset])
 
   //// create array of all countries 
   //// select random country (#2) 
@@ -33,23 +33,30 @@ function Play() {
     const id = e.target.id
     const clickedCountry = Array.from(document.querySelectorAll(`path#${id}`))
     const correctCountry = Array.from(document.querySelectorAll(`path#${randomCountry.id}`))
-    console.log(`selcted country: `, e.target)
-    console.log(`correctCountry: `,correctCountry)
+
     correctCountry[0].style.fill = '#aeeb2bcf'
-    setClicked(true)
+    setClicked(clickedCountry)
+    setReset(false)
     if (id === randomCountry.id){
       console.log(`Right`)
       
     }else {
       console.log(`You dumb fuck`)
-      // correctCountry.style.fill = 'rgba(255, 255, 255, 0.512)'
       clickedCountry[0].style.fill = 'rgb(216, 48, 82)'
     }
-    console.log(id)
+    // console.log(id)
   }
 
   const nextGuess = e => {
+    console.log(`CLICKED COUNTRY: `, clicked)
+    const correctCountry = Array.from(document.querySelectorAll(`path#${randomCountry.id}`))
+    console.log(`correctCountry: `,correctCountry)
+
+    correctCountry[0].style.fill = 'rgba(255, 255, 255, 0.512)'
+    clicked[0].style.fill = 'rgba(255, 255, 255, 0.512)'
     setRandomCountry(null)
+    setClicked(null)
+    setReset(true)
     console.log(`next!`)
   }
 
