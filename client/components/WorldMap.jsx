@@ -4,10 +4,6 @@ import { motion } from 'framer-motion'
 
 function WorldMap({ countryClicked }) {
 
-  // const countryClicked = (e) => {
-  //   console.log(`got clicked: `, e.target.id)
-  // }
-
   return (
   <>
     <motion.div className='world-map'   

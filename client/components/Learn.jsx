@@ -29,7 +29,6 @@ function Learn() {
   return (
     <>
       <WorldMap countryClicked={countryClicked} />
-
       {country && <CountryInfo country={country} closeInfo={closeInfo}/>}
     </>
   )

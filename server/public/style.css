@@ -300,3 +300,8 @@ path:hover {
 background-color: darkgrey;
 outline: 1px solid slategrey;
 }
+/* Play section CSS */
+
+.btn-next{
+  z-index: 50;
+}
