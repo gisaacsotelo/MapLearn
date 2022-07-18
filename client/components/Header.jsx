@@ -34,6 +34,9 @@ function Header() {
         justify="space-between"
       >
       {/* <motion.header className='heading' animate={{ x: 100 }} > */}
+      <div className='earthgif'>
+        <img src="./images/earth.gif" alt="rotating earth gif"/>
+      </div>
         <motion.div className='title-container'
           whileHover={{ scale: 1.1 }}
           onHoverStart={e => {}}
