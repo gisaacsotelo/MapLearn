@@ -62,10 +62,15 @@ function Play() {
 
   return (
     <>
-      {randomCountry && <h2 className="play-country-title">{randomCountry.name}</h2>}
+     
       <WorldMap countryClicked={countryClicked} />
       {showLeaderBoard && <LeaderBoard />}
-      {clicked && <button className="btn-next" onClick={nextGuess}>Next Guess</button>}
+
+      <div className="random-country-container">
+      
+      {randomCountry && <h2 className="play-country-title">{randomCountry.name}</h2>}
+      {clicked && <button className="btn-next" role="button" onClick={nextGuess}></button>}
+      </div>
     </>
   )
 }
