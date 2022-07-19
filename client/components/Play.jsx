@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 // import components
 import WorldMap from "./WorldMap"
 import LeaderBoard from "./LeaderBoard"
+import ScoreSumary from './ScoreSummary'
 //import functions
 
 
@@ -60,17 +61,30 @@ function Play() {
     setReset(!reset)
   }
 
+  // ~unselect 
+  const unselect = e => {
+    e.stopPropagation()
+  }
+
   // ! RETURN
 
   return (
     <>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
         <p className="turn">Turn: {turn}/10</p>
-        <p className="score">Score: {turn}pts</p>
+        {/* todo: score appears after turn 10 finishes */}
+        <ScoreSumary score={score} />
+        {/* <p className="score">Score: {turn}pts</p> */}
+  
       <WorldMap countryClicked={countryClicked} />
+
       {showLeaderBoard && <LeaderBoard />}
       {clickedCountry &&
       <> 
+        <div className="unselect">
+          <div className="unselect-top"></div>
+          <div className="unselect-bottom" onClick={unselect} ></div>
+        </div>
         <button className="btn-next" onClick={nextGuess}>Next Guess</button>
         {<p className="answer">Your answer was: {answer}</p>}
       </>
