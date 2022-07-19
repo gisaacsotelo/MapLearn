@@ -92,15 +92,15 @@ function Play() {
   return (
     <>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
-        <p className="turn">Turn: {turn}/10</p>
+        <p className="turn">Turn: {turn === 11 ? 10 : turn}/10</p>
         {/* todo: score appears after turn 10 finishes */}
-      {turn >= 2 &&
+      {turn >= 11 &&
       <>
         <div className="unselect">
-          <div className="unselect-gameover-top"></div>
+          <div className="unselect-top"></div>
           <div className="unselect-gameover-bottom unselect-bottom" onClick={unselect} ></div>
         </div>
-        <ScoreSumary score={score} />
+        <ScoreSumary score={score} resetGame={resetGame} />
       </>
       }
         

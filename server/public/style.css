@@ -305,7 +305,7 @@ outline: 1px solid slategrey;
 /* Play section CSS */
 
 /* YOU CAN MODIY THIS IF NEEDED, JUST DID IT TO FORCE MY STURR RENDER ON TOP WHILE CODING */
-.btn-next, .play-country-title, .turn, .answer, .score, .reset-game, .score-summary {
+.btn-next, .play-country-title, .turn, .answer, .score, .reset-game {
   margin-top: 12vh;
   align-self: flex-start;
   z-index: 1;
@@ -345,4 +345,8 @@ footer {
 
 .unselect-gameover-bottom {
   z-index: 2;
+}
+
+.gameover-btn, .score-summary {
+  z-index: 3;
 }
