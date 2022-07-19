@@ -4,10 +4,6 @@ import { motion } from 'framer-motion'
 
 function WorldMap({ countryClicked }) {
 
-  // const countryClicked = (e) => {
-  //   console.log(`got clicked: `, e.target.id)
-  // }
-
   return (
   <>
     <motion.div className='world-map'   
@@ -233,7 +229,7 @@ function WorldMap({ countryClicked }) {
     <path
       onClick={countryClicked}
       id="CI"
-      data-name="C\xF4te d'Ivoire"
+      data-name="Cote d'Ivoire"
       data-id="CI"
       d="m946.5 506.2-2.3.9-1.3.8-.9-2.7-1.6.7-1-.1-1 1.9-4.3-.1-1.6-1-.7.6-1.1.5-.5 2.2 1.3 2.6 1.3 5.1-2 .8-.6.9.4 1.2-.3 2.8h-.9l-.3 1.8.6 3.1-1.2 2.8 1.6 1.8 1.8.4 2.3 2.7.2 2.5-.5.8-.5 5.2 1.1.2 5.6-2.4 3.9-1.8 6.6-1.1 3.6-.1 3.9 1.3 2.6-.1.2-2.5-2.4-5.5 1.5-7.2 2.3-5.3-1.4-9.1-3.8-1.6-2.7.2-1.9 1.6-2.5-1.3-1-2.1-2.5-1.4z"
     />
@@ -1402,7 +1398,7 @@ function WorldMap({ countryClicked }) {
     <path
       onClick={countryClicked}
       id="ST"
-      data-name="S\xE3o Tom\xE9 and Principe"
+      data-name="Sao Tome and Principe"
       data-id="ST"
       d="m1014.1 571.4.5-.8v-.5l-.3-.5h-.4l-.5.4-.3.4v.3l.1.7.1.3.3.2.5-.5zm4.3-9.2.2-.4v-.2l-.1-.1-.1-.1-.2.1-.3.5.1.2.2.2.2-.2z"
     />

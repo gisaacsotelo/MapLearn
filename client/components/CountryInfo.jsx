@@ -2,6 +2,7 @@ import React from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
 function CountryInfo(props) {
+  console.log(props)
   const {
     flags,
     coatOfArms,
@@ -33,17 +34,20 @@ function CountryInfo(props) {
   const flag = flags[Object.keys(flags)[1]]
   const coat = coatOfArms[Object.keys(coatOfArms)[1]]
 
+
+
   return (
     <>
       <AnimatePresence>
-        <motion.button
+        <motion.div
           className="modal"
           onClick={() => props.closeInfo(props.country)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <motion.div
+          <motion.span
             className="country-info"
+            onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
           >
@@ -67,13 +71,13 @@ function CountryInfo(props) {
 
           <p>Latitude: {latlng[0]}° S, Longtitude: {latlng[1]}° E</p>
           <p>Area: {area.toLocaleString()} km²</p> */}
-
+                <br></br>
                 <p>
                   {countryName} is a country located in the continent of{" "}
                   {continents}, it is alternatively known as {altSpelling[1]}{" "}
                   and its capital is the city of {capital}
                 </p>
-
+                <br></br>
                 <p>
                   In {countryName}, the people drive on the {drivingSide} side
                   of the road. they primarily speak the language{" "}
@@ -81,14 +85,14 @@ function CountryInfo(props) {
                   {languageArr[1] && `however they also commonly speak`}
                   {languageArr[1]}
                 </p>
-
+                <br></br>
                 <p>
                   {countryName} has an average population of{" "}
                   {population.toLocaleString()} people, the people of{" "}
                   {countryName} use the {currency.name}({currency.symbol}) as
                   their currency, {unMember && `They are a part of the UN`}
                 </p>
-
+                <br></br>
                 <p>
                   The country is located in the {continents} region, but its
                   exact location is {latlng[0]}° S by {latlng[1]}° E, and its
@@ -96,8 +100,8 @@ function CountryInfo(props) {
                 </p>
               </div>
             </section>
-          </motion.div>
-        </motion.button>
+          </motion.span>
+        </motion.div>
       </AnimatePresence>
     </>
   )
