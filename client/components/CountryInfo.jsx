@@ -2,6 +2,7 @@ import React from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
 function CountryInfo(props) {
+  console.log(props)
   const {
     flags,
     coatOfArms,

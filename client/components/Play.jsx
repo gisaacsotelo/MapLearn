@@ -10,11 +10,11 @@ function Play() {
   const [clickedCountry, setClickedCountry] = useState(null) // contains country clicked by user
   const [randomCountry, setRandomCountry] = useState(null) // contains random country for the round
   const [answer, setAnswer] = useState('')  // variable that hold if the answer was right or wrong to print
-  const [turn, setTurn] = useState(0) // holds current turn
+  const [turn, setTurn] = useState(1) // holds current turn
   const [score,setScore] = useState(0) // holds score of game
   const [reset, setReset] = useState(false) 
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
-  console.log(`Render component:`)
+
 
   // VARIABLES
 
@@ -27,7 +27,7 @@ function Play() {
   // on mounting & when reset is modified
   useEffect(() => {
     const countriesDOM = Array.from(document.querySelectorAll('path'))
-    console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
+    // console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
     const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) //random number from 0 to array.length
     const rndmCntry = countriesDOM[rndInt]
     setRandomCountry(rndmCntry)
@@ -46,6 +46,9 @@ function Play() {
     randomCountry.style.fill = green
     if (id === randomCountry.id){
       setAnswer('CORRECT!')
+      setScore(prevScore => {
+        return prevScore + 1
+      })
     }else {
       setAnswer('WRONG!')
       clickedCountry.style.fill = red
@@ -59,12 +62,17 @@ function Play() {
     setRandomCountry(null)
     setClickedCountry(null)
     setReset(!reset)
+    setTurn(previousTurn => {
+      return previousTurn + 1
+    })
   }
 
   // ~unselect 
   const unselect = e => {
     e.stopPropagation()
   }
+
+  console.log(randomCountry)
 
   // ! RETURN
 
