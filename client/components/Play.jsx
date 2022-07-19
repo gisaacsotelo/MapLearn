@@ -13,8 +13,7 @@ function Play() {
   const [score,setScore] = useState(0) // holds score of game
   const [reset, setReset] = useState(false) 
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
-  console.log(`Render component: `,randomCountry)
-  if (randomCountry) {console.log(`name: `,randomCountry.dataset.name)}
+  console.log(`Render component:`)
 
   // VARIABLES
 
@@ -27,14 +26,9 @@ function Play() {
   // on mounting & when reset is modified
   useEffect(() => {
     const countriesDOM = Array.from(document.querySelectorAll('path'))
-    console.log(`Effect - Mx: `, countriesDOM[93]) // prints mexico for reference 
-    // console.log(`countriesDOM: `, countriesDOM)
+    console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
     const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) //random number from 0 to array.length
     const rndmCntry = countriesDOM[rndInt]
-    console.log(`mount-country: `, rndmCntry.dataset.name)
-    // console.log(`mount-id: `, rndmCntry.id)
-    // console.log(`mount-name: `, rndmCntry.dataset.name)
-    // console.log(`mount-name: `, rndmCntry.localName)
     setRandomCountry(rndmCntry)
   }, [reset])
 
@@ -45,37 +39,29 @@ function Play() {
   //this function will run when a country is clicked in WorldMap
   const countryClicked = (e) => {
     const id = e.target.id
-    const clickedCountry = Array.from(document.querySelectorAll(`path#${id}`))
-    console.log(`Country clicked: `,clickedCountry)
+    const clicked = Array.from(document.querySelectorAll(`path#${id}`))
+    const clickedCountry = clicked[0]
     setClickedCountry(clickedCountry)
     randomCountry.style.fill = green
     if (id === randomCountry.id){
-      console.log(`Selectrion was RIGHT`)
       setAnswer('CORRECT!')
     }else {
-      console.log(`Selection was WRONG`)
       setAnswer('WRONG!')
-      clickedCountry[0].style.fill = red
+      clickedCountry.style.fill = red
     }
-    setReset(false)
   }
   
   // ~nextGuess
   const nextGuess = e => {
-    console.log(`CLICKED COUNTRY: `, clicked)
-    const correctCountry = Array.from(document.querySelectorAll(`path#${randomCountry.id}`))
-    console.log(`correctCountry: `,correctCountry)
-
-    correctCountry[0].style.fill = 'rgba(255, 255, 255, 0.512)'
-    clicked[0].style.fill = 'rgba(255, 255, 255, 0.512)'
+    randomCountry.style.fill = grey
+    clickedCountry.style.fill = grey
     setRandomCountry(null)
-    setClicked(null)
-    setReset(true)
-    console.log(`next!`)
+    setClickedCountry(null)
+    setReset(!reset)
   }
 
   // ! RETURN
-  console.log(`ANSWER: `, answer)
+
   return (
     <>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}

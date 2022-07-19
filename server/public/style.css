@@ -313,3 +313,10 @@ outline: 1px solid slategrey;
 .play-country-title h2 {
   top: 10vh;
 }
+
+/* Footer */
+
+footer {
+  text-align: center;
+  font-size: 0.7em;
+}
