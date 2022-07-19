@@ -303,8 +303,11 @@ outline: 1px solid slategrey;
 }
 /* Play section CSS */
 
-.btn-next{
-  z-index: 50;
+/* YOU CAN MODIY THIS IF NEEDED, JUST DID IT TO FORCE MY STURR RENDER ON TOP WHILE CODING */
+.btn-next, .play-country-title, .turn, .answer, .score {
+  margin-top: 12vh;
+  align-self: flex-start;
+  z-index: 1;
 }
 
 .play-country-title h2 {
