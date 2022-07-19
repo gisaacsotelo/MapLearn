@@ -83,7 +83,7 @@ function Play() {
       <> 
         <div className="unselect">
           <div className="unselect-top"></div>
-          <div className="unselect-bottom" unselect={unselect}></div>
+          <div className="unselect-bottom" onClick={unselect} ></div>
         </div>
         <button className="btn-next" onClick={nextGuess}>Next Guess</button>
         {<p className="answer">Your answer was: {answer}</p>}
