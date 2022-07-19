@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 // import components
 import WorldMap from "./WorldMap"
 import LeaderBoard from "./LeaderBoard"
+import ScoreSumary from './ScoreSummary'
 //import functions
 
 
@@ -13,7 +14,7 @@ function Play() {
   const [score,setScore] = useState(0) // holds score of game
   const [reset, setReset] = useState(false) 
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
-  console.log(`Render component:`)
+
 
   // VARIABLES
 
@@ -26,7 +27,7 @@ function Play() {
   // on mounting & when reset is modified
   useEffect(() => {
     const countriesDOM = Array.from(document.querySelectorAll('path'))
-    console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
+    // console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
     const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) //random number from 0 to array.length
     const rndmCntry = countriesDOM[rndInt]
     setRandomCountry(rndmCntry)
@@ -64,9 +65,14 @@ function Play() {
     setTurn(previousTurn => {
       return previousTurn + 1
     })
-    console.log('turn: ', turn)
   }
 
+  // ~unselect 
+  const unselect = e => {
+    e.stopPropagation()
+  }
+
+  console.log(randomCountry)
 
   // ! RETURN
 
@@ -74,11 +80,19 @@ function Play() {
     <>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
         <p className="turn">Turn: {turn}/10</p>
-        <p className="score">Score: {score}pts</p>
+        {/* todo: score appears after turn 10 finishes */}
+        <ScoreSumary score={score} />
+        {/* <p className="score">Score: {turn}pts</p> */}
+  
       <WorldMap countryClicked={countryClicked} />
+
       {showLeaderBoard && <LeaderBoard />}
       {clickedCountry &&
       <> 
+        <div className="unselect">
+          <div className="unselect-top"></div>
+          <div className="unselect-bottom" onClick={unselect} ></div>
+        </div>
         <button className="btn-next" onClick={nextGuess}>Next Guess</button>
         {<p className="answer">Your answer was: {answer}</p>}
       </>
