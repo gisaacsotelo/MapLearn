@@ -9,7 +9,7 @@ function Play() {
   const [clickedCountry, setClickedCountry] = useState(null) // contains country clicked by user
   const [randomCountry, setRandomCountry] = useState(null) // contains random country for the round
   const [answer, setAnswer] = useState('')  // variable that hold if the answer was right or wrong to print
-  const [turn, setTurn] = useState(0) // holds current turn
+  const [turn, setTurn] = useState(1) // holds current turn
   const [score,setScore] = useState(0) // holds score of game
   const [reset, setReset] = useState(false) 
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
@@ -45,6 +45,9 @@ function Play() {
     randomCountry.style.fill = green
     if (id === randomCountry.id){
       setAnswer('CORRECT!')
+      setScore(prevScore => {
+        return prevScore + 1
+      })
     }else {
       setAnswer('WRONG!')
       clickedCountry.style.fill = red
@@ -58,7 +61,12 @@ function Play() {
     setRandomCountry(null)
     setClickedCountry(null)
     setReset(!reset)
+    setTurn(previousTurn => {
+      return previousTurn + 1
+    })
+    console.log('turn: ', turn)
   }
+
 
   // ! RETURN
 
@@ -66,7 +74,7 @@ function Play() {
     <>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
         <p className="turn">Turn: {turn}/10</p>
-        <p className="score">Score: {turn}pts</p>
+        <p className="score">Score: {score}pts</p>
       <WorldMap countryClicked={countryClicked} />
       {showLeaderBoard && <LeaderBoard />}
       {clickedCountry &&
