@@ -2,7 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div></div>
+    <footer>
+      <p><em>World map courtesy of simplemaps.com</em></p>
+    </footer>
   )
 }
 
