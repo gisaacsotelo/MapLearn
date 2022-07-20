@@ -354,5 +354,11 @@ footer {
 /* Music */
 
 .music {
+<<<<<<< HEAD
   z-index: 5;
 }
+=======
+  z-index: 2;
+  position: absolute;
+}
+>>>>>>> c9baa47c3f95bb755d4ca8fa4090eca6a2868043
