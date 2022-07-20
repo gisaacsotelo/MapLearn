@@ -17,7 +17,7 @@ function Learn() {
     setCountry(await getCountry(id))
     const elMapa = document.querySelectorAll(`path#${id}`)
     const elMapaArray = Array.prototype.slice.call(elMapa)
-    elMapaArray[0].style.fill = '#aeeb2bcf';
+    elMapaArray[0].style.fill = 'rgba(54, 97, 47, 0.624)';
   }
   // function to close the Country Info
   const closeInfo = country => {

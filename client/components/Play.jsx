@@ -86,31 +86,41 @@ function Play() {
 
   return (
     <>
-      {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
-        <p className="turn">Turn: {turn}/10</p>
-        {/* todo: score appears after turn 10 finishes */}
-        <ScoreSumary score={score} />
-        {/* <p className="score">Score: {turn}pts</p> */}
-  
       <WorldMap countryClicked={countryClicked} />
 
+      <div className='play-content'>
+      {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
+        <p className="turn">Turn: {turn}/10</p>
+
       {showLeaderBoard && <LeaderBoard />}
+
+      </div>
+      
+      <div className='score-box'>
+          {/* todo: score appears after turn 10 finishes */}
+          <ScoreSumary score={score} /> 
+          {/* <p className="score">Score: {turn}pts</p> */}
+      </div>
       {clickedCountry &&
-      <> 
+      <>
+
+      <div className='refresh-choice'>
+      
+      
         <div className="unselect">
           <div className="unselect-top"></div>
           <div className="unselect-bottom" onClick={unselect} ></div>
         </div>
-        <button className="btn-next" onClick={nextGuess}>Next Guess</button>
+        <button className="btn-next" onClick={nextGuess}>Next</button>
         {<p className="answer">Your answer was: {answer}</p>}
-      </>
-      }
+      </div>
+      </>}
 
       {/* Music */}
       <button className="music" onClick={() => {
         PlayMusic()
         return music ? play() : pause()
-      }}>🎶</button>
+      }}>Sound</button>
     </>
   )
 }

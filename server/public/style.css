@@ -111,7 +111,7 @@ path {
 }
 
 path:hover {
-  fill: rgba(153, 28, 28, 0.781);
+  fill: rgba(54, 97, 47, 0.624);
   fill-rule: evenodd;
   transition: 0.6s ease-in-out;
   cursor: pointer;
@@ -320,33 +320,77 @@ outline: 1px solid slategrey;
 /* Play section CSS */
 
 
-.random-country-container{
-  
-  position: relative;
-  top: 35vh;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-self: auto flex-start flex-end;
-}
 
-.play-country-title {
-  position: fixed;
-  font-family: "Londrina Outline", cursive;
-  color: #36682e;
-  font-size: 48px;
+
+.play-content{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: auto flex-start flex-end;
   background-color: #a8ccd71e;
   box-shadow: 8px 8px 6px -6px black;
   backdrop-filter: blur(2px);
-  padding: 25px;
+  padding: 10px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
 }
+
+.play-country-title {
+  font-family: "Londrina Outline", cursive;
+  color: #36682e;
+  font-size: 48px;
+  padding: 10px;
+}
+
+.turn {
+  font-family: Inter,sans-serif;
+  font-size: 18px;
+}
+
+.score-box {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: auto flex-start flex-end;
+  background-color: #a8ccd73a;
+  box-shadow: 8px 8px 6px -6px black;
+  backdrop-filter: blur(2px);
+  padding: 100px 100vh 100px 100vh;
+  font-size: 30px;
+  position: fixed;
+  text-align: center;
+}
+
+.score-box h1, h2 {
+  font-family: "Londrina Outline", cursive;
+  color: #36682e;
+}
+
+/* .score-box h3 {
+} */
+
+.refresh {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: auto flex-start flex-end;
+  background-color: #a8ccd71e;
+  box-shadow: 8px 8px 6px -6px black;
+  backdrop-filter: blur(2px);
+  padding: 10px;
+  position: fixed;
+  bottom: 10px;
+}
+
 
 .btn-next {
   z-index: 50;
   top: 10vh;
   margin-top: 5%;
-  position: relative;
   align-items: center;
   background-color: #a8ccd71e;
   box-shadow: 8px 8px 6px -6px black;
@@ -397,7 +441,6 @@ outline: 1px solid slategrey;
 /* MERGE ISSUES FOLLOWING THIS */
 
 .btn-next, .play-country-title, .turn, .answer, .score {
-  margin-top: 12vh;
   align-self: flex-start;
   z-index: 1;
 }
@@ -436,5 +479,8 @@ footer {
 /* Music */
 
 .music {
+  position: fixed;
   z-index: 5;
+  bottom: 10px;
+  right: 10px;
 }
