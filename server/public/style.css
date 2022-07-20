@@ -305,11 +305,12 @@ outline: 1px solid slategrey;
 /* Play section CSS */
 
 /* YOU CAN MODIY THIS IF NEEDED, JUST DID IT TO FORCE MY STURR RENDER ON TOP WHILE CODING */
-.btn-next, .play-country-title, .turn, .answer, .score {
+.btn-next, .play-country-title, .turn, .answer, .score, .reset-game {
   margin-top: 12vh;
   align-self: flex-start;
   z-index: 1;
 }
+
 
 .play-country-title h2 {
   top: 10vh;
@@ -331,20 +332,33 @@ footer {
   flex-direction: column;
 }
 
-.unselect-top{
+.unselect-top {
   height: 10vh;
   width: 100%;
   z-index: -1;
 }
 
-.unselect-bottom{
+.unselect-bottom {
   height: 90vh;
   width: 100%;
+}
+
+.unselect-gameover-bottom {
+  z-index: 2;
+}
+
+.gameover-btn, .score-summary {
+  z-index: 3;
 }
 
 /* Music */
 
 .music {
+<<<<<<< HEAD
+  z-index: 5;
+}
+=======
   z-index: 2;
   position: absolute;
 }
+>>>>>>> c9baa47c3f95bb755d4ca8fa4090eca6a2868043

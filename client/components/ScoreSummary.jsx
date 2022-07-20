@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ScoreSummary({ score }) {
+function ScoreSummary({ score, resetGame }) {
 
 let summary;
 
@@ -17,10 +17,10 @@ if (score <= 2) {
   return (
     <div className='score-summary'>
       
-      <h1>RESULTS</h1>
-      <h2>{score}/10</h2>
+      <h2>RESULTS</h2>
+      <h3>{score}/10</h3>
       {summary && <h3>{summary}</h3>}
-
+      <button onClick={resetGame} className='gameover-btn'>Play again</button>
     </div>
   )
 }

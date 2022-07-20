@@ -14,9 +14,11 @@ function Play() {
   const [score,setScore] = useState(0) // holds score of game
   const [reset, setReset] = useState(false) 
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
+  const [expiredCountriesArr, setExpiredCountriesArr] = useState([])
 
 
   // VARIABLES
+  const arrayOfCountries = []
 
   // colors:
   const green = '#aeeb2bcf'
@@ -30,6 +32,48 @@ function Play() {
     // console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
     const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) //random number from 0 to array.length
     const rndmCntry = countriesDOM[rndInt]
+
+    // pseudo:
+    // - Create the array of all the countries
+    // - remove already excluded countries (starts with not removing anything since excluding array is empty)
+    // - Select a random country from the array
+    // - push random country to excluded countries array
+    // set the selected random country to its useState variable
+    // - play game
+    // - on reset start from top
+    // 
+  
+  
+    // * testing funcs
+    // const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
+    // console.log(`BEFORE: `,arrayOfCountries)
+
+    //   const newExpArray = arrayOfCountries?.filter( (country, index) => {
+
+    //     const removeMe = expiredCountriesArr.map(exclude => {
+    //       if(country.id == exclude) {} else{
+    //         return index
+    //       }
+    //     }) // end map
+
+    //     if (index === removeMe){
+    //       console.log(`this one does not pass: `,country)
+    //     } else {
+    //       console.log(`This one passes: `,country)
+    //       return country
+    //     }
+    //   })
+    //   console.log(`newExpArray: `, newExpArray)
+    //   if (newExpArray !== 1) {
+    //     return country
+    //   }
+    //   console.log(`AFTER: `,arrayOfCountries)
+    // })
+    // end testing
+    
+    
+
+
     setRandomCountry(rndmCntry)
   }, [reset])
 
@@ -41,6 +85,7 @@ function Play() {
   const countryClicked = (e) => {
     const id = e.target.id
     const clicked = Array.from(document.querySelectorAll(`path#${id}`))
+
     const clickedCountry = clicked[0]
     setClickedCountry(clickedCountry)
     randomCountry.style.fill = green
@@ -72,16 +117,37 @@ function Play() {
     e.stopPropagation()
   }
 
-  console.log(randomCountry)
+  // ~resetGame 
+  const resetGame = e => {
+    setClickedCountry(null) // contains country clicked by user
+    setRandomCountry(null) // contains random country for the round
+    setAnswer('')  // variable that hold if the answer was right or wrong to print
+    setTurn(1) // holds current turn
+    setScore(0) // holds score of game
+    setyShowLeaderBoard(false)
+    setReset(!reset)
+    randomCountry.style.fill = grey
+    clickedCountry.style.fill = grey
+  }
+
 
   // ! RETURN
 
   return (
     <>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
-        <p className="turn">Turn: {turn}/10</p>
+        <p className="turn">Turn: {turn === 11 ? 10 : turn}/10</p>
         {/* todo: score appears after turn 10 finishes */}
-        <ScoreSumary score={score} />
+      {turn >= 11 &&
+      <>
+        <div className="unselect">
+          <div className="unselect-top"></div>
+          <div className="unselect-gameover-bottom unselect-bottom" onClick={unselect} ></div>
+        </div>
+        <ScoreSumary score={score} resetGame={resetGame} />
+      </>
+      }
+        
         {/* <p className="score">Score: {turn}pts</p> */}
   
       <WorldMap countryClicked={countryClicked} />
@@ -95,6 +161,7 @@ function Play() {
         </div>
         <button className="btn-next" onClick={nextGuess}>Next Guess</button>
         {<p className="answer">Your answer was: {answer}</p>}
+        <button className="reset-game" onClick={resetGame}>Reset</button>
       </>
       }
 
