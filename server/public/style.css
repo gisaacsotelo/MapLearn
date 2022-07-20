@@ -496,6 +496,7 @@ footer {
 
 .gameover-btn, .score-summary {
   z-index: 3;
+
 }
 
 /* Music */
@@ -525,4 +526,22 @@ footer {
   line-height: 1.25rem;
   padding: .75rem 1rem;
 >>>>>>> d1e704e0a95efcafae0ab6059d738a5e171249f9
+}
+
+.score-summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-summary h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+
+.gameover-btn {
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding-top: 3vh;
+  padding-bottom: 6vh;
 }
