@@ -35,20 +35,35 @@ function Play() {
 
   // on mounting & when reset is modified
   useEffect(() => {
+    const countriesDOM = Array.from(document.querySelectorAll('path'))
     // console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
-    
+    const rndInt = Math.floor(Math.random() * `${arrayOfCountries.length}`) //random number from 0 to array.length
+    const rndmCntry = arrayOfCountries[rndInt]
+    expiredCountriesArr.push(rndmCntry.id)
+
+
     // pseudo:
     // - Create the array of all the countries
-    const countriesDOM = Array.from(document.querySelectorAll('path'))
     // - remove already excluded countries (starts with not removing anything since excluding array is empty)
+  
+    
     // * testing funcs
     const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
     console.log(`BEFORE: `,arrayOfCountries)
-      // anythign that passes gets to be choosen by random country for the round
 
-      const newExpArray = expiredCountriesArr.map( expiredCountry => {
-        if (country.id === expiredCountry){
-          return 1
+      const newExpArray = arrayOfCountries?.filter( (country, index) => {
+
+        const removeMe = expiredCountriesArr.map(exclude => {
+          if(country.id == exclude) {} else{
+            return index
+          }
+        }) // end map
+
+        if (index === removeMe){
+          console.log(`this one does not pass: `,country)
+        } else {
+          console.log(`This one passes: `,country)
+          return country
         }
       })
       console.log(`newExpArray: `, newExpArray)
@@ -59,10 +74,7 @@ function Play() {
     })
     // end testing
     // - Select a random country from the array
-    // todo: update the lenght and the array we choose from
-    const rndInt = Math.floor(Math.random() * `${arrayOfCountries.length}`) //random number from 0 to array.length
-    const rndmCntry = arrayOfCountries[rndInt]
-    expiredCountriesArr.push(rndmCntry.id)
+  
     // - push random country to excluded countries array
     // set the selected random country to its useState variable
     // - play game
