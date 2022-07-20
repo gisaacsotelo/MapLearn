@@ -39,7 +39,7 @@ function Play() {
     const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
       // anythign that passes gets to be choosen by random country for the round
 
-      newExpArray = expiredCountriesArr.map( expiredCountry => {
+      const newExpArray = expiredCountriesArr.map( expiredCountry => {
         if (country.id === expiredCountry){
           return 1
         }
@@ -48,8 +48,8 @@ function Play() {
       if (newExpArray !== 1) {
         return country
       }
+      console.log(`AFTER: `,newExpArray)
     })
-    console.log(`AFTER: `,newExpArray)
     // end testing
     // - Select a random country from the array
     // todo: update the lenght and the array we choose from
