@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
 
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500&display=swap");
 
@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url(./images/Texturelabs_Paper_276S.jpg);
+  background-image: url(./images/texture1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -39,7 +39,8 @@ body {
 
 header {
   padding: 0vw 10vw 0vw 10vw;
-  font-family: "Fredoka One", cursive;
+  font-family: "Londrina Outline", cursive;
+  color: rgb(54, 104, 46);
   height: 10%;
   width: 100vw;
   display: flex;
@@ -48,10 +49,18 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0); 
+  background-color: #a8ccd731;
+  /* animation: animateBg 15s linear infinite;
+  background-image: linear-gradient(90deg,#91d3169c, #16cdd39c, #91d3169c);
+  background-size: 400% 100%;       */
+  box-shadow: 0 8px 6px -6px black;
   backdrop-filter: blur(5px);
-  box-shadow: 5px 5px 50px 10px;
-  z-index:1;
+  z-index:1;       
+}
+
+@keyframes animateBg {
+  0% { background-position: 0% 100%; }
+  100% { background-position: 100% 0%; }
 }
 
 footer {
@@ -87,7 +96,6 @@ nav a {
 .world-map {
   width: 100%;
   height: 80vh;
-  transition: 0.6s ease-in-out;
   display: flex;
   position: absolute;
   justify-content: center;
@@ -99,11 +107,11 @@ svg {
 }
 
 path {
-  fill: rgba(255, 255, 255, 0.512);
+  fill: rgba(113, 172, 102, 0.418);
 }
 
 path:hover {
-  fill: #aeeb2bcf;
+  fill: rgba(54, 97, 47, 0.624);
   fill-rule: evenodd;
   transition: 0.6s ease-in-out;
   cursor: pointer;
@@ -127,17 +135,19 @@ path:hover {
 .country-info {
   position: fixed;
   padding: 50px;
-  background-color: rgba(255, 255, 255, 0.5); 
+  background-color: #afe4f431;
+  background-color: #a8ccd73a;
   backdrop-filter: blur(5px);
   border-radius: 5px;
-  width: 60vw;
-  height: 60vh;
+  width: 75vw;
+  height: 75vh;
   /* animation: slidein 1.5s ease-in-out 0.5s 1 normal both; */
-  transition: 0.4s ease-in-out;
+  transition: .4s ease-in-out;
   box-shadow: 5px 5px 50px 10px;
   column-gap: 200px;
   z-index: 10;
   display: flex;
+  justify-content: flex-start;
   flex-flow:column nowrap;
   align-items: center;
 }
@@ -147,6 +157,7 @@ path:hover {
 }
 
 .top-section {
+  margin-top: 5%;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -158,16 +169,20 @@ path:hover {
 .bot-section {
   margin-top: 5%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-flow: column wrap;
-  font-size: 0.8rem;
+  font-size: 18px;
   /* border: 1px solid red; */
   backdrop-filter: (5px);
   width: 50vw;
-  height: 100%;
+  /* height: 100%; */
+  height: 50vh;
   overflow: auto ;
   padding: 20px ;
+  border: 4px inset rgba(0, 0, 0, 0.432);
+  border-radius: .5rem;
+  background-color: rgba(255, 255, 255, 0.45);
 }
 
 
@@ -178,10 +193,11 @@ path:hover {
 }
 
 .country-name {
-  font-size: x-large;
-  font-family: "Poppins", sans-serif;
-  flex: 1 0 auto;
+  font-size: 2.5vw;
+  font-family: "Londrina Outline", sans-serif;
+  flex: 0 0 auto;
   text-align: center;
+  border-bottom: 5px solid #111827;
 }
 
 .country-flag {
@@ -249,7 +265,7 @@ path:hover {
   border-radius: .5rem;
   box-sizing: border-box;
   color: #111827;
-  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: Inter,sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.25rem;
@@ -302,11 +318,142 @@ path:hover {
 background-color: darkgrey;
 outline: 1px solid slategrey;
 }
+
 /* Play section CSS */
 
-/* YOU CAN MODIY THIS IF NEEDED, JUST DID IT TO FORCE MY STURR RENDER ON TOP WHILE CODING */
-.btn-next, .play-country-title, .turn, .answer, .score, .reset-game {
-  margin-top: 12vh;
+
+
+.play-content{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: auto flex-start flex-end;
+  background-color: #a8ccd71e;
+  box-shadow: 8px 8px 6px -6px black;
+  backdrop-filter: blur(2px);
+  padding: 10px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+.refresh-choice {
+  position: fixed;
+  bottom: 2vh;
+  text-align: center;
+}
+
+.answer {
+  font-size: 1.6rem;
+}
+
+.play-country-title {
+  font-family: "Londrina Outline", cursive;
+  color: #36682e;
+  font-size: 48px;
+  padding: 10px;
+}
+
+.turn {
+  font-family: Inter,sans-serif;
+  font-size: 18px;
+}
+
+.score-summary {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: auto flex-start flex-end;
+  background-color: #a8ccd73a;
+  box-shadow: 8px 8px 6px -6px black;
+  backdrop-filter: blur(2px);
+  padding: 100px 100vh 100px 100vh;
+  font-size: 30px;
+  position: fixed;
+  text-align: center;
+}
+
+.score-summary h1, h2 {
+  font-family: "Londrina Outline", cursive;
+  color: #36682e;
+}
+
+/* .score-box h3 {
+} */
+
+.refresh {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: auto flex-start flex-end;
+  background-color: #a8ccd71e;
+  box-shadow: 8px 8px 6px -6px black;
+  backdrop-filter: blur(2px);
+  padding: 10px;
+  position: fixed;
+  bottom: 10px;
+}
+
+
+.btn-next {
+  z-index: 50;
+  top: 10vh;
+  margin-top: 5%;
+  align-items: center;
+  background-color: #a8ccd71e;
+  box-shadow: 8px 8px 6px -6px black;
+  backdrop-filter: blur(2px);
+  padding: 50px;
+  cursor: pointer;
+  fill: rgb(255, 255, 255);
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 75px;
+  min-width: 48px;
+  outline: 0;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  background-image: url(./images/reload.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reset-game {
+
+}
+
+.btn-next:focus {
+  color: #171e29;
+}
+
+.btn-next:hover {
+  border-color: rgb(228, 158, 28);
+  color: rgb(235, 178, 22);
+  fill: rgb(221, 41, 18);
+}
+
+.btn-next:active {
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255);
+}
+
+@media (min-width: 768px) {
+  .btn-next {
+    min-width: 48px;
+  }
+}
+
+/* MERGE ISSUES FOLLOWING THIS */
+
+.btn-next, .play-country-title, .turn, .answer, .score {
   align-self: flex-start;
   z-index: 1;
 }
@@ -325,7 +472,7 @@ footer {
 
 .unselect {
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   display:flex;
@@ -354,6 +501,28 @@ footer {
 /* Music */
 
 .music {
+<<<<<<< HEAD
   z-index: 2;
   position: absolute;
+||||||| 25b3510
+<<<<<<< HEAD
+  z-index: 5;
+}
+=======
+  z-index: 2;
+  position: absolute;
+=======
+  position: fixed;
+  z-index: 5;
+  bottom: 1vh;
+  right: 1vw;
+}
+
+.reset-game {
+  position: fixed;
+  bottom: 1vh;
+  right: 7vw;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+>>>>>>> d1e704e0a95efcafae0ab6059d738a5e171249f9
 }

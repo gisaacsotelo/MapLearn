@@ -34,8 +34,6 @@ function CountryInfo(props) {
   const flag = flags[Object.keys(flags)[1]]
   const coat = coatOfArms[Object.keys(coatOfArms)[1]]
 
-
-
   return (
     <>
       <AnimatePresence>
@@ -45,8 +43,9 @@ function CountryInfo(props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <motion.span
+          <motion.div
             className="country-info"
+
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -76,13 +75,10 @@ function CountryInfo(props) {
                 <br></br>
                 <p>
                   The area of {countryName} is {area.toLocaleString()} km² and it's exact location is {latlng[0]}° S by {latlng[1]}° E
-
-                  {/* The country is located in the {continents} region, but its exact location is {latlng[0]}° S by {latlng[1]}° E, and its
-                  Area is {area} km² */}
                 </p>
               </div>
             </section>
-          </motion.span>
+          </motion.div>
         </motion.div>
       </AnimatePresence>
     </>
@@ -90,16 +86,3 @@ function CountryInfo(props) {
 }
 
 export default CountryInfo
-
-
-  {/* <p key>Alternatively known as:{altSpell.map(altName => {return <li>{altName}</li>})}</p>
-          <p>Capital City: {capital}</p>
-          <p>Continent: {continents}</p>
-          <p>They drive on the {drivingSide} side of the road!</p>
-          {unMember && <p>They are a part of the UN</p>}
-          <p>Population: {population.toLocaleString()} people</p>
-          <p> {languageArr[0]} </p>
-          <p>Currency: {currency.symbol}{currency.name}</p>
-
-          <p>Latitude: {latlng[0]}° S, Longtitude: {latlng[1]}° E</p>
-          <p>Area: {area.toLocaleString()} km²</p> */}

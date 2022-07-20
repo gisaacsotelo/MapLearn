@@ -12,7 +12,7 @@ function Music() {
   }
 
   return (
-    <button className="music" onClick={() => {
+    <button className="music button-38" onClick={() => {
       PlayMusic()
       return music ? play() : pause()
     }}>Music</button>
