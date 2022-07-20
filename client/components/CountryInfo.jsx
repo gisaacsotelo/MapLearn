@@ -2,7 +2,6 @@ import React from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
 function CountryInfo(props) {
-  console.log(props)
   const {
     flags,
     coatOfArms,
@@ -27,7 +26,7 @@ function CountryInfo(props) {
   const currency = currencies[Object.keys(currencies)[0]]
   const drivingSide = car[Object.keys(car)[1]]
   const languageArr = Object.values(languages).map((lan) => {
-    return <>{lan}</>
+    return <li key={lan}>{lan}</li>
   })
 
   // IMAGES //
@@ -59,42 +58,22 @@ function CountryInfo(props) {
             </section>
             <section className="bot-section">
               <div className="country-desc">
-                {/* <p key>Alternatively known as:{altSpell.map(altName => {return <li>{altName}</li>})}</p>
-          <p>Capital City: {capital}</p>
-          <p>Continent: {continents}</p>
-          <p>They drive on the {drivingSide} side of the road!</p>
-          {unMember && <p>They are a part of the UN</p>}
-          <p>Population: {population.toLocaleString()} people</p>
-          <p> {languageArr[0]} </p>
-          <p>Currency: {currency.symbol}{currency.name}</p>
-
-          <p>Latitude: {latlng[0]}° S, Longtitude: {latlng[1]}° E</p>
-          <p>Area: {area.toLocaleString()} km²</p> */}
+                <br></br>
                 <p>
-                  {countryName} is a country located in the continent of{" "}
-                  {continents}, it is alternatively known as {altSpelling[1]}{" "}
-                  and its capital is the city of {capital}
+                  {countryName} is a country located in {continents}. It is alternatively known as {altSpelling[1]} and it's capital city is {capital[0]}
                 </p>
                 <br></br>
                 <p>
-                  In {countryName}, the people drive on the {drivingSide} side
-                  of the road. they primarily speak the language{" "}
-                  {languageArr[0]},{" "}
-                  {languageArr[1] && `however they also commonly speak`}
-                  {languageArr[1]}
+                  In {countryName}, the people drive on the {drivingSide} side of the road. Language(s) spoken: {languageArr}
                 </p>
                 <br></br>
                 <p>
-                  {countryName} has an average population of{" "}
-                  {population.toLocaleString()} people, the people of{" "}
-                  {countryName} use the {currency.name} {currency.symbol}  as
-                  their currency, {unMember && `They are a part of the UN`}
+                  {countryName} has a population of {population.toLocaleString()} and uses the {currency.name}({currency.symbol}) as
+                  it's currency. {unMember && `They are a part of the UN`}.
                 </p>
                 <br></br>
                 <p>
-                  The country is located in the {continents} region, but its
-                  exact location is {latlng[0]}° S by {latlng[1]}° E, and its
-                  Area is {area} km²
+                  The area of {countryName} is {area.toLocaleString()} km² and it's exact location is {latlng[0]}° S by {latlng[1]}° E
                 </p>
               </div>
             </section>

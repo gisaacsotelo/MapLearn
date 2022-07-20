@@ -501,6 +501,17 @@ footer {
 /* Music */
 
 .music {
+<<<<<<< HEAD
+  z-index: 2;
+  position: absolute;
+||||||| 25b3510
+<<<<<<< HEAD
+  z-index: 5;
+}
+=======
+  z-index: 2;
+  position: absolute;
+=======
   position: fixed;
   z-index: 5;
   bottom: 1vh;
@@ -513,4 +524,5 @@ footer {
   right: 7vw;
   line-height: 1.25rem;
   padding: .75rem 1rem;
+>>>>>>> d1e704e0a95efcafae0ab6059d738a5e171249f9
 }
