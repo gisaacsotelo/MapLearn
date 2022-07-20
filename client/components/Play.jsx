@@ -128,7 +128,7 @@ function Play() {
 
       </div>
 
-      {turn >= 2 &&
+      {turn >= 11 &&
       <>
         <div className="unselect">
           <div className="unselect-top"></div>
