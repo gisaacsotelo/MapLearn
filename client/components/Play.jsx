@@ -105,7 +105,7 @@ function Play() {
     setyShowLeaderBoard(false)
     setReset(!reset)
     randomCountry.style.fill = grey
-    clickedCountry.style.fill = grey
+    if(clickedCountry){clickedCountry.style.fill = grey}
   }
 
 
