@@ -1,10 +1,11 @@
 /* 
 TODO:
-- limit to ten points
-- reset turn
-- reset game
-- add reset to scoreSummary
-  -make scoreSummary appear/disappear 
+
+//- limit to ten points
+//- reset turn
+//- reset game
+//- add reset to scoreSummary
+  //-make scoreSummary appear/disappear 
   -CSS for scoreSummary
 - remove countries every time they get selected and fix reset. 
 

@@ -14,9 +14,11 @@ function Play() {
   const [score,setScore] = useState(0) // holds score of game
   const [reset, setReset] = useState(false) 
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
+  const [expiredCountriesArr, setExpiredCountriesArr] = useState([])
 
 
   // VARIABLES
+  const arrayOfCountries = []
 
   // colors:
   const green = '#aeeb2bcf'
@@ -26,10 +28,43 @@ function Play() {
 
   // on mounting & when reset is modified
   useEffect(() => {
-    const countriesDOM = Array.from(document.querySelectorAll('path'))
     // console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
-    const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) //random number from 0 to array.length
-    const rndmCntry = countriesDOM[rndInt]
+    
+    // pseudo:
+    // - Create the array of all the countries
+    const countriesDOM = Array.from(document.querySelectorAll('path'))
+    // - remove already excluded countries (starts with not removing anything since excluding array is empty)
+    // * testing funcs
+    console.log(`BEFORE: `,arrayOfCountries)
+    const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
+      // anythign that passes gets to be choosen by random country for the round
+
+      newExpArray = expiredCountriesArr.map( expiredCountry => {
+        if (country.id === expiredCountry){
+          return 1
+        }
+      })
+      console.log(`newExpArray: `, newExpArray)
+      if (newExpArray !== 1) {
+        return country
+      }
+    })
+    console.log(`AFTER: `,newExpArray)
+    // end testing
+    // - Select a random country from the array
+    // todo: update the lenght and the array we choose from
+    const rndInt = Math.floor(Math.random() * `${arrayOfCountries.length}`) //random number from 0 to array.length
+    const rndmCntry = arrayOfCountries[rndInt]
+    expiredCountriesArr.push(rndmCntry.id)
+    // - push random country to excluded countries array
+    // set the selected random country to its useState variable
+    // - play game
+    // - on reset start from top
+    // 
+    
+    
+
+
     setRandomCountry(rndmCntry)
   }, [reset])
 
@@ -41,6 +76,7 @@ function Play() {
   const countryClicked = (e) => {
     const id = e.target.id
     const clicked = Array.from(document.querySelectorAll(`path#${id}`))
+
     const clickedCountry = clicked[0]
     setClickedCountry(clickedCountry)
     randomCountry.style.fill = green
