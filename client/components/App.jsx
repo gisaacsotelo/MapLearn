@@ -7,6 +7,7 @@ import Play from "./Play"
 
 import Header from "./Header"
 import Footer from "./Footer"
+import Music from "./Music"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           {/* <Route path='/play' element={<Play />} />   This will be for our stretch */}
         </Routes>
       </div>
+      <Music />
       <Footer />
     </Router>
   )
