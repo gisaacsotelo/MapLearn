@@ -30,49 +30,46 @@ function Play() {
   useEffect(() => {
     const countriesDOM = Array.from(document.querySelectorAll('path'))
     // console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
-    const rndInt = Math.floor(Math.random() * `${arrayOfCountries.length}`) //random number from 0 to array.length
-    const rndmCntry = arrayOfCountries[rndInt]
-    expiredCountriesArr.push(rndmCntry.id)
-
+    const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) //random number from 0 to array.length
+    const rndmCntry = countriesDOM[rndInt]
 
     // pseudo:
     // - Create the array of all the countries
     // - remove already excluded countries (starts with not removing anything since excluding array is empty)
-  
-    
-    // * testing funcs
-    const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
-    console.log(`BEFORE: `,arrayOfCountries)
-
-      const newExpArray = arrayOfCountries?.filter( (country, index) => {
-
-        const removeMe = expiredCountriesArr.map(exclude => {
-          if(country.id == exclude) {} else{
-            return index
-          }
-        }) // end map
-
-        if (index === removeMe){
-          console.log(`this one does not pass: `,country)
-        } else {
-          console.log(`This one passes: `,country)
-          return country
-        }
-      })
-      console.log(`newExpArray: `, newExpArray)
-      if (newExpArray !== 1) {
-        return country
-      }
-      console.log(`AFTER: `,arrayOfCountries)
-    })
-    // end testing
     // - Select a random country from the array
-  
     // - push random country to excluded countries array
     // set the selected random country to its useState variable
     // - play game
     // - on reset start from top
     // 
+  
+  
+    // * testing funcs
+    // const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
+    // console.log(`BEFORE: `,arrayOfCountries)
+
+    //   const newExpArray = arrayOfCountries?.filter( (country, index) => {
+
+    //     const removeMe = expiredCountriesArr.map(exclude => {
+    //       if(country.id == exclude) {} else{
+    //         return index
+    //       }
+    //     }) // end map
+
+    //     if (index === removeMe){
+    //       console.log(`this one does not pass: `,country)
+    //     } else {
+    //       console.log(`This one passes: `,country)
+    //       return country
+    //     }
+    //   })
+    //   console.log(`newExpArray: `, newExpArray)
+    //   if (newExpArray !== 1) {
+    //     return country
+    //   }
+    //   console.log(`AFTER: `,arrayOfCountries)
+    // })
+    // end testing
     
     
 
@@ -133,7 +130,6 @@ function Play() {
     clickedCountry.style.fill = grey
   }
 
-  console.log(randomCountry)
 
   // ! RETURN
 
