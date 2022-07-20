@@ -42,8 +42,8 @@ function Play() {
     const countriesDOM = Array.from(document.querySelectorAll('path'))
     // - remove already excluded countries (starts with not removing anything since excluding array is empty)
     // * testing funcs
-    console.log(`BEFORE: `,arrayOfCountries)
     const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
+    console.log(`BEFORE: `,arrayOfCountries)
       // anythign that passes gets to be choosen by random country for the round
 
       const newExpArray = expiredCountriesArr.map( expiredCountry => {
@@ -55,7 +55,7 @@ function Play() {
       if (newExpArray !== 1) {
         return country
       }
-      console.log(`AFTER: `,newExpArray)
+      console.log(`AFTER: `,arrayOfCountries)
     })
     // end testing
     // - Select a random country from the array
