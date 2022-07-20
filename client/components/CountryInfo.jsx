@@ -34,8 +34,6 @@ function CountryInfo(props) {
   const flag = flags[Object.keys(flags)[1]]
   const coat = coatOfArms[Object.keys(coatOfArms)[1]]
 
-
-
   return (
     <>
       <AnimatePresence>
@@ -45,8 +43,9 @@ function CountryInfo(props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <motion.span
+          <motion.div
             className="country-info"
+
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -71,7 +70,6 @@ function CountryInfo(props) {
 
           <p>Latitude: {latlng[0]}° S, Longtitude: {latlng[1]}° E</p>
           <p>Area: {area.toLocaleString()} km²</p> */}
-                <br></br>
                 <p>
                   {countryName} is a country located in the continent of{" "}
                   {continents}, it is alternatively known as {altSpelling[1]}{" "}
@@ -89,7 +87,7 @@ function CountryInfo(props) {
                 <p>
                   {countryName} has an average population of{" "}
                   {population.toLocaleString()} people, the people of{" "}
-                  {countryName} use the {currency.name}({currency.symbol}) as
+                  {countryName} use the {currency.name} {currency.symbol}  as
                   their currency, {unMember && `They are a part of the UN`}
                 </p>
                 <br></br>
@@ -100,7 +98,7 @@ function CountryInfo(props) {
                 </p>
               </div>
             </section>
-          </motion.span>
+          </motion.div>
         </motion.div>
       </AnimatePresence>
     </>

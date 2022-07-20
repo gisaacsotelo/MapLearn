@@ -24,7 +24,8 @@ function Play() {
   // colors:
   const green = '#aeeb2bcf'
   const red = 'rgb(216, 48, 82)'
-  const grey = 'rgba(255, 255, 255, 0.512)'
+  // const grey = 'rgba(255, 255, 255, 0.512)'
+  const countryGreen = 'rgba(113, 172, 102, 0.418)'
 
 
   // on mounting & when reset is modified
@@ -80,8 +81,8 @@ function Play() {
   
   // ~nextGuess
   const nextGuess = e => {
-    randomCountry.style.fill = grey
-    clickedCountry.style.fill = grey
+    randomCountry.style.fill = countryGreen
+    clickedCountry.style.fill = countryGreen
     setRandomCountry(null)
     setClickedCountry(null)
     setReset(!reset)
@@ -113,9 +114,20 @@ function Play() {
 
   return (
     <>
+      <WorldMap countryClicked={countryClicked} />
+
+      <div className='play-content'>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
         <p className="turn">Turn: {turn === 11 ? 10 : turn}/10</p>
         {/* todo: score appears after turn 10 finishes */}
+      
+        
+        {/* <p className="score">Score: {turn}pts</p> */}
+
+      {showLeaderBoard && <LeaderBoard />}
+
+      </div>
+
       {turn >= 11 &&
       <>
         <div className="unselect">
@@ -125,23 +137,21 @@ function Play() {
         <ScoreSumary score={score} resetGame={resetGame} />
       </>
       }
-        
-        {/* <p className="score">Score: {turn}pts</p> */}
-  
-      <WorldMap countryClicked={countryClicked} />
 
-      {showLeaderBoard && <LeaderBoard />}
       {clickedCountry &&
-      <> 
+      <>
         <div className="unselect">
           <div className="unselect-top"></div>
           <div className="unselect-bottom" onClick={unselect} ></div>
         </div>
-        <button className="btn-next" onClick={nextGuess}>Next Guess</button>
-        {<p className="answer">Your answer was: {answer}</p>}
-        <button className="reset-game" onClick={resetGame}>Reset</button>
+
+      <div className='refresh-choice'>
+      {<p className="answer">Your answer was: {answer}</p>}
+        <button className="btn-next" onClick={nextGuess}>Next</button>   
+        </div>
       </>
       }
+      <button className="reset-game button-38" onClick={resetGame}>Reset</button>
 
     </>
   )
