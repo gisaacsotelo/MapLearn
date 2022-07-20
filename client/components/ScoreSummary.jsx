@@ -20,7 +20,7 @@ if (score <= 2) {
       <h2>RESULTS</h2>
       <h3>{score}/10</h3>
       {summary && <h3>{summary}</h3>}
-      <button onClick={resetGame} className='gameover-btn'>Play again</button>
+      <button onClick={resetGame} className='gameover-btn button-38'>Play again</button>
     </div>
   )
 }

@@ -24,7 +24,7 @@ function Play() {
   // colors:
   const green = '#aeeb2bcf'
   const red = 'rgb(216, 48, 82)'
-  // const grey = 'rgba(255, 255, 255, 0.512)'
+  const grey = 'rgba(255, 255, 255, 0.512)'
   const countryGreen = 'rgba(113, 172, 102, 0.418)'
 
 
@@ -81,8 +81,8 @@ function Play() {
   
   // ~nextGuess
   const nextGuess = e => {
-    randomCountry.style.fill = countryGreen
-    clickedCountry.style.fill = countryGreen
+    randomCountry.style.fill = ''
+    clickedCountry.style.fill = ''
     setRandomCountry(null)
     setClickedCountry(null)
     setReset(!reset)
