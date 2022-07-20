@@ -4,10 +4,10 @@ import WorldMap from "./WorldMap"
 import LeaderBoard from "./LeaderBoard"
 import ScoreSumary from './ScoreSummary'
 //import functions
-import useSound from 'use-sound'
-import YakkosWorld from '../../server/public/data/yakkos-world-instrumental.mp3'
+
 
 function Play() {
+  const [allCountries, setAllCountries] = useState([])
   const [clickedCountry, setClickedCountry] = useState(null) // contains country clicked by user
   const [randomCountry, setRandomCountry] = useState(null) // contains random country for the round
   const [answer, setAnswer] = useState('')  // variable that hold if the answer was right or wrong to print
@@ -15,15 +15,11 @@ function Play() {
   const [score,setScore] = useState(0) // holds score of game
   const [reset, setReset] = useState(false) 
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
+  const [expiredCountriesArr, setExpiredCountriesArr] = useState([])
 
-  //Music//
-  const [music, setMusic] = useState(true)
-  const [play, { pause }] = useSound(YakkosWorld)
-  const PlayMusic = () => {
-    setMusic(!music)
-  }
 
   // VARIABLES
+  const arrayOfCountries = []
 
   // colors:
   const green = '#aeeb2bcf'
@@ -38,6 +34,25 @@ function Play() {
     // console.log(`Effect - Mx: `, Array.from(document.querySelectorAll('path#MX'))) // prints mexico for reference 
     const rndInt = Math.floor(Math.random() * `${countriesDOM.length}`) //random number from 0 to array.length
     const rndmCntry = countriesDOM[rndInt]
+
+    // pseudo:
+    // - Create the array of all the countries
+    // - remove already excluded countries (starts with not removing anything since excluding array is empty)
+    // - Select a random country from the array
+    // - push random country to excluded countries array
+    // set the selected random country to its useState variable
+    // - play game
+    // - on reset start from top
+    // 
+  
+  
+    // * testing funcs
+
+    // end testing
+    
+    
+
+
     setRandomCountry(rndmCntry)
   }, [reset])
 
@@ -49,6 +64,7 @@ function Play() {
   const countryClicked = (e) => {
     const id = e.target.id
     const clicked = Array.from(document.querySelectorAll(`path#${id}`))
+
     const clickedCountry = clicked[0]
     setClickedCountry(clickedCountry)
     randomCountry.style.fill = green
@@ -80,7 +96,19 @@ function Play() {
     e.stopPropagation()
   }
 
-  console.log(randomCountry)
+  // ~resetGame 
+  const resetGame = e => {
+    setClickedCountry(null) // contains country clicked by user
+    setRandomCountry(null) // contains random country for the round
+    setAnswer('')  // variable that hold if the answer was right or wrong to print
+    setTurn(1) // holds current turn
+    setScore(0) // holds score of game
+    setyShowLeaderBoard(false)
+    setReset(!reset)
+    randomCountry.style.fill = grey
+    if(clickedCountry){clickedCountry.style.fill = grey}
+  }
+
 
   // ! RETURN
 
@@ -90,37 +118,41 @@ function Play() {
 
       <div className='play-content'>
       {randomCountry && <h2 className="play-country-title">{randomCountry.dataset.name}</h2>}
-        <p className="turn">Turn: {turn}/10</p>
+        <p className="turn">Turn: {turn === 11 ? 10 : turn}/10</p>
+        {/* todo: score appears after turn 10 finishes */}
+      
+        
+        {/* <p className="score">Score: {turn}pts</p> */}
 
       {showLeaderBoard && <LeaderBoard />}
 
       </div>
-      
-      <div className='score-box'>
-          {/* todo: score appears after turn 10 finishes */}
-          <ScoreSumary score={score} /> 
-          {/* <p className="score">Score: {turn}pts</p> */}
-      </div>
+
+      {turn >= 11 &&
+      <>
+        <div className="unselect">
+          <div className="unselect-top"></div>
+          <div className="unselect-gameover-bottom unselect-bottom" onClick={unselect} ></div>
+        </div>
+        <ScoreSumary score={score} resetGame={resetGame} />
+      </>
+      }
+
       {clickedCountry &&
       <>
-
-      <div className='refresh-choice'>
-      
-      
         <div className="unselect">
           <div className="unselect-top"></div>
           <div className="unselect-bottom" onClick={unselect} ></div>
         </div>
-        <button className="btn-next" onClick={nextGuess}>Next</button>
-        {<p className="answer">Your answer was: {answer}</p>}
-      </div>
-      </>}
 
-      {/* Music */}
-      <button className="music" onClick={() => {
-        PlayMusic()
-        return music ? play() : pause()
-      }}>Sound</button>
+      <div className='refresh-choice'>
+      {<p className="answer">Your answer was: {answer}</p>}
+        <button className="btn-next" onClick={nextGuess}>Next</button>   
+        </div>
+      </>
+      }
+      <button className="reset-game button-38" onClick={resetGame}>Reset</button>
+
     </>
   )
 }

@@ -136,6 +136,7 @@ path:hover {
   position: fixed;
   padding: 50px;
   background-color: #afe4f431;
+  background-color: #a8ccd73a;
   backdrop-filter: blur(5px);
   border-radius: 5px;
   width: 75vw;
@@ -317,8 +318,8 @@ path:hover {
 background-color: darkgrey;
 outline: 1px solid slategrey;
 }
-/* Play section CSS */
 
+/* Play section CSS */
 
 
 
@@ -337,6 +338,16 @@ outline: 1px solid slategrey;
   left: 10px;
 }
 
+.refresh-choice {
+  position: fixed;
+  bottom: 2vh;
+  text-align: center;
+}
+
+.answer {
+  font-size: 1.6rem;
+}
+
 .play-country-title {
   font-family: "Londrina Outline", cursive;
   color: #36682e;
@@ -349,7 +360,7 @@ outline: 1px solid slategrey;
   font-size: 18px;
 }
 
-.score-box {
+.score-summary {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -364,7 +375,7 @@ outline: 1px solid slategrey;
   text-align: center;
 }
 
-.score-box h1, h2 {
+.score-summary h1, h2 {
   font-family: "Londrina Outline", cursive;
   color: #36682e;
 }
@@ -395,14 +406,13 @@ outline: 1px solid slategrey;
   background-color: #a8ccd71e;
   box-shadow: 8px 8px 6px -6px black;
   backdrop-filter: blur(2px);
-  padding: 25px;
-  color: rgb(228, 50, 50);
+  padding: 50px;
   cursor: pointer;
   fill: rgb(255, 255, 255);
   height: 48px;
   justify-content: center;
   letter-spacing: -.8px;
-  line-height: 24px;
+  line-height: 75px;
   min-width: 48px;
   outline: 0;
   transition: all .3s;
@@ -415,6 +425,9 @@ outline: 1px solid slategrey;
   background-position: center;
 }
 
+.reset-game {
+
+}
 
 .btn-next:focus {
   color: #171e29;
@@ -445,6 +458,7 @@ outline: 1px solid slategrey;
   z-index: 1;
 }
 
+
 .play-country-title h2 {
   top: 10vh;
 }
@@ -458,22 +472,30 @@ footer {
 
 .unselect {
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   display:flex;
   flex-direction: column;
 }
 
-.unselect-top{
+.unselect-top {
   height: 10vh;
   width: 100%;
   z-index: -1;
 }
 
-.unselect-bottom{
+.unselect-bottom {
   height: 90vh;
   width: 100%;
+}
+
+.unselect-gameover-bottom {
+  z-index: 2;
+}
+
+.gameover-btn, .score-summary {
+  z-index: 3;
 }
 
 /* Music */
@@ -481,6 +503,14 @@ footer {
 .music {
   position: fixed;
   z-index: 5;
-  bottom: 10px;
-  right: 10px;
+  bottom: 1vh;
+  right: 1vw;
+}
+
+.reset-game {
+  position: fixed;
+  bottom: 1vh;
+  right: 7vw;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
 }
