@@ -7,6 +7,8 @@ import { AnimatePresence } from "framer-motion"
 
 function Learn() {
   const [country, setCountry] = useState(null)
+  const countryGreen = 'rgba(113, 172, 102, 0.418)'
+
 
 
   //this function will run when a country is clicked in WorldMap
@@ -22,7 +24,7 @@ function Learn() {
     const code = country.cca2
     const selectedCountry = document.querySelectorAll(`path#${code}`)
     const selectedCountryArr = Array.prototype.slice.call(selectedCountry)
-    selectedCountryArr[0].style.fill = 'rgba(255, 255, 255, 0.512)'
+    selectedCountryArr[0].style.fill = countryGreen
     setCountry(false)
   }
 
