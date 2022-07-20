@@ -341,3 +341,10 @@ footer {
   height: 90vh;
   width: 100%;
 }
+
+/* Music */
+
+.music {
+  z-index: 5;
+  
+}
