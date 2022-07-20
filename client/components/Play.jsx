@@ -105,8 +105,8 @@ function Play() {
     setScore(0) // holds score of game
     setyShowLeaderBoard(false)
     setReset(!reset)
-    randomCountry.style.fill = grey
-    if(clickedCountry){clickedCountry.style.fill = grey}
+    randomCountry.style.fill = countryGreen
+    if(clickedCountry){clickedCountry.style.fill = countryGreen}
   }
 
 
@@ -128,7 +128,7 @@ function Play() {
 
       </div>
 
-      {turn >= 11 &&
+      {turn >= 2 &&
       <>
         <div className="unselect">
           <div className="unselect-top"></div>

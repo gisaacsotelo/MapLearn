@@ -312,6 +312,7 @@ path:hover {
 
 .bot-section::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
 }
 
 .bot-section::-webkit-scrollbar-thumb {
@@ -360,25 +361,7 @@ outline: 1px solid slategrey;
   font-size: 18px;
 }
 
-.score-summary {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  align-self: auto flex-start flex-end;
-  background-color: #a8ccd73a;
-  box-shadow: 8px 8px 6px -6px black;
-  backdrop-filter: blur(2px);
-  padding: 100px 100vh 100px 100vh;
-  font-size: 30px;
-  position: fixed;
-  text-align: center;
-}
 
-.score-summary h1, h2 {
-  font-family: "Londrina Outline", cursive;
-  color: #36682e;
-}
 
 /* .score-box h3 {
 } */
@@ -425,9 +408,6 @@ outline: 1px solid slategrey;
   background-position: center;
 }
 
-.reset-game {
-
-}
 
 .btn-next:focus {
   color: #171e29;
@@ -502,17 +482,7 @@ footer {
 /* Music */
 
 .music {
-<<<<<<< HEAD
   z-index: 2;
-  position: absolute;
-||||||| 25b3510
-<<<<<<< HEAD
-  z-index: 5;
-}
-=======
-  z-index: 2;
-  position: absolute;
-=======
   position: fixed;
   z-index: 5;
   bottom: 1vh;
@@ -525,23 +495,48 @@ footer {
   right: 7vw;
   line-height: 1.25rem;
   padding: .75rem 1rem;
->>>>>>> d1e704e0a95efcafae0ab6059d738a5e171249f9
-}
 
+}
 .score-summary {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: auto flex-start flex-end;
+  background-color: #a8ccd73a;
+  box-shadow: 8px 8px 6px -6px black;
+  backdrop-filter: blur(2px);
+  padding: 100px 100vh 100px 100vh;
+  font-size: 30px;
+  position: fixed;
+  text-align: center;
 }
+
+.score-summary h1, h2 {
+  font-family: "Londrina Outline", cursive;
+  color: #36682e;
+  text-align: center;
+}
+
+.score-summary h2 {
+  font-size: 6rem;
+  font-weight: 600;
+  color: crimson;
+}
+
 
 .score-summary h3 {
   font-size: 1.2rem;
   font-weight: 600;
+  align-self: center;
 }
 
 
 .gameover-btn {
+  margin-top: 2vh;
   font-weight: 800;
   font-size: 1.4rem;
   padding-top: 3vh;
   padding-bottom: 6vh;
+  align-self: center;
 }
