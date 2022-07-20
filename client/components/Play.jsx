@@ -7,6 +7,7 @@ import ScoreSumary from './ScoreSummary'
 
 
 function Play() {
+  const [allCountries, setAllCountries] = useState([])
   const [clickedCountry, setClickedCountry] = useState(null) // contains country clicked by user
   const [randomCountry, setRandomCountry] = useState(null) // contains random country for the round
   const [answer, setAnswer] = useState('')  // variable that hold if the answer was right or wrong to print
@@ -45,30 +46,7 @@ function Play() {
   
   
     // * testing funcs
-    // const arrayOfCountries = countriesDOM.slice(0, 5).filter(country => {
-    // console.log(`BEFORE: `,arrayOfCountries)
 
-    //   const newExpArray = arrayOfCountries?.filter( (country, index) => {
-
-    //     const removeMe = expiredCountriesArr.map(exclude => {
-    //       if(country.id == exclude) {} else{
-    //         return index
-    //       }
-    //     }) // end map
-
-    //     if (index === removeMe){
-    //       console.log(`this one does not pass: `,country)
-    //     } else {
-    //       console.log(`This one passes: `,country)
-    //       return country
-    //     }
-    //   })
-    //   console.log(`newExpArray: `, newExpArray)
-    //   if (newExpArray !== 1) {
-    //     return country
-    //   }
-    //   console.log(`AFTER: `,arrayOfCountries)
-    // })
     // end testing
     
     
