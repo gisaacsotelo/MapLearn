@@ -7,10 +7,12 @@ import Play from "./Play"
 
 import Header from "./Header"
 import Footer from "./Footer"
+import Music from "./Music"
 
 function App() {
   return (
     <Router>
+      <Music />
       <Header />
       <div className="main">
         <Routes>
