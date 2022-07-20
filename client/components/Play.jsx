@@ -4,7 +4,8 @@ import WorldMap from "./WorldMap"
 import LeaderBoard from "./LeaderBoard"
 import ScoreSumary from './ScoreSummary'
 //import functions
-
+import useSound from 'use-sound'
+import YakkosWorld from '../../server/public/data/yakkos-world-instrumental.mp3'
 
 function Play() {
   const [clickedCountry, setClickedCountry] = useState(null) // contains country clicked by user
@@ -16,6 +17,12 @@ function Play() {
   const [showLeaderBoard, setyShowLeaderBoard] = useState(false)
   const [expiredCountriesArr, setExpiredCountriesArr] = useState([])
 
+  //Music//
+  const [music, setMusic] = useState(true)
+  const [play, { pause }] = useSound(YakkosWorld)
+  const PlayMusic = () => {
+    setMusic(!music)
+  }
 
   // VARIABLES
   const arrayOfCountries = []
@@ -156,6 +163,12 @@ function Play() {
         <button className="reset-game" onClick={resetGame}>Reset</button>
       </>
       }
+
+      {/* Music */}
+      <button className="music" onClick={() => {
+        PlayMusic()
+        return music ? play() : pause()
+      }}>🎶</button>
     </>
   )
 }

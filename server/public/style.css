@@ -350,3 +350,9 @@ footer {
 .gameover-btn, .score-summary {
   z-index: 3;
 }
+
+/* Music */
+
+.music {
+  z-index: 5;
+}
